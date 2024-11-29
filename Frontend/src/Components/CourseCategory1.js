@@ -1,72 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate instead
-import Nav from './Nav'
+
+import Nav  from './Nav'
 import Footer from './Footer';
 
-const CourseCategory1 = ({ onAddToCart }) => {
-  const [cart, setCart] = useState([]);
-  const [cartCount, setCartCount] = useState(0);
-  const navigate = useNavigate();
-  useEffect(() => {
-    const savedCart = localStorage.getItem("cart");
-    if (savedCart) {
-      setCart(JSON.parse(savedCart));
-      localStorage.removeItem("cart");
-    }
-  }, []); 
-
-  useEffect(() => {
-    // Update cart count whenever the cart state changes
-    setCartCount(cart.reduce((count, item) => count + item.quantity, 0));
-  }, [cart]);
-
-  const handleAddToCart = (product) => {
-    const existsInCart = cart.find((item) => item.id === product.id);
-    if (existsInCart) {
-      setCart(
-        cart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
-    }
-  };
-
-  const handleAdd = (product) => {
-    setCart(
-      cart.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
-  };
-
-  const handleRemove = (product, isDelete = false) => {
-    if (isDelete) {
-      setCart(cart.filter((item) => item.id !== product.id));
-    } else {
-      const updatedCart = cart.map((item) =>
-        item.id === product.id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      );
-      setCart(updatedCart);
-    }
-  };
-
-  const handleClearCart = () => {
-    setCart([]);
-  };
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setCart([]);
-    window.location.reload();
-    navigate("/");
-  };
+const CourseCategory1 = ({ onAddToCart,cartCount,handleLogout }) => {
   const [products, setProducts] = useState([]);
-  // const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); // Initialize navigate
 
   useEffect(() => {
     // Simulate fetching product (course) data
@@ -81,15 +21,18 @@ const CourseCategory1 = ({ onAddToCart }) => {
     ]);
   }, []);
 
-
+  const handleAddToCart = (product) => {
+    onAddToCart(product); // Add to cart functionality
+  };
 
   const handleNavigateToCourseList = () => {
     navigate('/courselist'); // Navigate to course list using navigate
   };
 
   return (
+   <>
+   <Nav cartCount={cartCount} handleLogout={handleLogout} />
     <div>
-      <Nav cartCount={cartCount} handleLogout={handleLogout} />
       <br /><br /><br />
       <section className="bg-light position-relative">
         <div className="container position-relative">
@@ -153,8 +96,9 @@ const CourseCategory1 = ({ onAddToCart }) => {
           </div>
         </div>
       </section>
-      <Footer/>
     </div>
+    <Footer/>
+   </>
   );
 };
 

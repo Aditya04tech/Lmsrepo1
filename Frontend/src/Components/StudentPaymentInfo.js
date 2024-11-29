@@ -19,7 +19,8 @@ Page Banner START */}
             {/* Avatar */}
             <div className="col-auto">
               <div className="avatar avatar-xxl position-relative mt-n3">
-                <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/09.jpg" alt />
+                <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/09.jpg"  alt="Course image"
+  aria-hidden="true"/>
                 <span className="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
               </div>
             </div>
@@ -53,7 +54,7 @@ Page Banner START */}
         {/* Divider */}
         <hr className="d-xl-none" />
         <div className="col-12 col-xl-3 d-flex justify-content-between align-items-center">
-          <a className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
+          <Link className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</Link>
           <button className="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
             <i className="fas fa-sliders-h" />
           </button>
@@ -96,13 +97,13 @@ Page content START */}
               <Link className="list-group-item" to="/studentdeleteaccount"><i className="bi bi-trash fa-fw me-2" />Delete Profile</Link>
                 <Link className="list-group-item text-danger bg-danger-soft-hover" to="/signout"><i className="fas fa-sign-out-alt fa-fw me-2" />Sign Out</Link>
                 {/* Collapse menu */}
-                <a className="list-group-item" data-bs-toggle="collapse" href="#collapseauthentication" role="button" aria-expanded="false" aria-controls="collapseauthentication">
+                <Link className="list-group-item" data-bs-toggle="collapse" href="#collapseauthentication" role="button" aria-expanded="false" aria-controls="collapseauthentication">
                   <i className="bi bi-lock fa-fw me-2" />Dropdown level
-                </a>
+                </Link>
                 {/* Submenu */}
                 <ul className="nav collapse flex-column" id="collapseauthentication" data-bs-parent="#navbar-sidebar">
-                  <li className="nav-item"> <a className="nav-link" href="#">Dropdown item</a></li>
-                  <li className="nav-item"> <a className="nav-link" href="#">Dropdown item</a></li>
+                  <li className="nav-item"> <Link className="nav-link" href="#">Dropdown item</Link></li>
+                  <li className="nav-item"> <Link className="nav-link" href="#">Dropdown item</Link></li>
                 </ul>
               </div>
             </div>
@@ -118,7 +119,7 @@ Page content START */}
           {/* Card header START */}
           <div className="card-header bg-transparent d-sm-flex justify-content-sm-between align-items-center border-bottom">
             <h3 className="mb-2 mb-sm-0">Payment methods</h3>
-            <a href="#" className="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addNewcard">Add new card</a>
+            <Link href="#" className="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addNewcard">Add new card</Link>
           </div>
           {/* Card header END */}
           {/* Card body START */}
@@ -141,7 +142,7 @@ Page content START */}
                         <label className="form-label">Card Number <span className="text-danger">*</span></label>
                         <div className="position-relative">
                           <input type="text" className="form-control" placeholder="xxxx xxxx xxxx xxxx" />
-                          <img src="assets/images/client/visa.svg" className="w-40px position-absolute top-50 end-0 translate-middle-y me-2 d-none d-sm-block" alt />
+                          <img src="assets/images/client/visa.svg" className="w-40px position-absolute top-50 end-0 translate-middle-y me-2 d-none d-sm-block" alt="spayment "  />
                         </div>	
                       </div>
                       {/* Expiration Date */}
@@ -207,7 +208,7 @@ Page content START */}
           {/* Card header START */}
           <div className="card-header bg-transparent d-sm-flex justify-content-sm-between align-items-center border-bottom">
             <h3 className="mb-2 mb-sm-0">Billing address</h3>
-            <a href="#" className="btn btn-sm btn-primary-soft mb-0">Add new address</a>
+            <Link href="#" className="btn btn-sm btn-primary-soft mb-0">Add new address</Link>
           </div>
           {/* Card header END */}
           {/* Card body START */}
@@ -222,7 +223,7 @@ Page content START */}
               </div>
               {/* Button */}
               <div>
-                <a href="#" className="btn btn-sm btn-success mb-0">Edit</a>&nbsp;
+                <Link href="#" className="btn btn-sm btn-success mb-0">Edit</Link>&nbsp;
 
                 <button className="btn btn-sm btn-danger mb-0">Delete</button>
               </div>
@@ -238,7 +239,7 @@ Page content START */}
               </div>
               {/* Button */}
               <div>
-                <a href="#" className="btn btn-sm btn-success mb-0">Edit</a>&nbsp;
+                <Link href="#" className="btn btn-sm btn-success mb-0">Edit</Link>&nbsp;
                 <button className="btn btn-sm btn-danger mb-0">Delete</button>
               </div>
             </div>
@@ -302,10 +303,10 @@ Page content START */}
                     <td>4/2/2023</td>
                     {/* Title item */}
                     <td>
-                      <h6 className="mt-2 mt-lg-0 mb-0"><a href="#">Sketch from A to Z: for app designer</a></h6>
+                      <h6 className="mt-2 mt-lg-0 mb-0"><Link href="#">Sketch from A to Z: for app designer</Link></h6>
                     </td>
                     {/* Payment method item */}
-                    <td><img src="assets/images/client/mastercard.svg" className="h-40px" alt /><span className="ms-2">****4568</span></td>
+                    <td><img src="assets/images/client/mastercard.svg" className="h-40px"  alt="spayment " /><span className="ms-2">****4568</span></td>
                     {/* Status item */}
                     <td>
                       <span className="badge bg-success bg-opacity-10 text-success">Paid</span>
@@ -314,7 +315,7 @@ Page content START */}
                     <td>$350</td>
                     {/* Action item */}
                     <td>
-                      <a href="#" className="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i className="bi bi-download" /></a>
+                      <Link href="#" className="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i className="bi bi-download" /></Link>
                     </td>
                   </tr>
                   {/* Table item */}
@@ -323,10 +324,10 @@ Page content START */}
                     <td>10/1/2023</td>
                     {/* Title item */}
                     <td>
-                      <h6 className="mt-2 mt-lg-0 mb-0"><a href="#">Create a Design System in Figma</a></h6>
+                      <h6 className="mt-2 mt-lg-0 mb-0"><Link href="#">Create a Design System in Figma</Link></h6>
                     </td>
                     {/* Payment method item */}
-                    <td><img src="assets/images/client/mastercard.svg" className="h-40px" alt /><span className="ms-2">****2588</span></td>
+                    <td><img src="assets/images/client/mastercard.svg" className="h-40px"  alt="spayment " /><span className="ms-2">****2588</span></td>
                     {/* Status item */}
                     <td>
                       <span className="badge bg-success bg-opacity-10 text-success">Paid</span>
@@ -335,7 +336,7 @@ Page content START */}
                     <td>$242</td>
                     {/* Action item */}
                     <td>
-                      <a href="#" className="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i className="bi bi-download" /></a>
+                      <Link href="#" className="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i className="bi bi-download" /></Link>
                     </td>
                   </tr>
                   {/* Table item */}
@@ -344,10 +345,10 @@ Page content START */}
                     <td>21/1/2023</td>
                     {/* Title item */}
                     <td>
-                      <h6 className="mt-2 mt-lg-0 mb-0"><a href="#">The Complete Web Development in python</a></h6>
+                      <h6 className="mt-2 mt-lg-0 mb-0"><Link href="#">The Complete Web Development in python</Link></h6>
                     </td>
                     {/* Payment method item */}
-                    <td><img src="assets/images/client/paypal.svg" className="w-80px" alt /></td>
+                    <td><img src="assets/images/client/paypal.svg" className="w-80px"  alt="spayment " /></td>
                     {/* Status item */}
                     <td>
                       <span className="badge bg-orange bg-opacity-10 text-orange">Pending</span>
@@ -356,7 +357,7 @@ Page content START */}
                     <td>$576</td>
                     {/* Action item */}
                     <td>
-                      <a href="#" className="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i className="bi bi-download" /></a>
+                      <Link href="#" className="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i className="bi bi-download" /></Link>
                     </td>
                   </tr>
                   {/* Table item */}
@@ -365,10 +366,10 @@ Page content START */}
                     <td>18/1/2023</td>
                     {/* Title item */}
                     <td>
-                      <h6 className="mt-2 mt-lg-0 mb-0"><a href="#">Deep Learning with React-Native</a></h6>
+                      <h6 className="mt-2 mt-lg-0 mb-0"><Link href="#">Deep Learning with React-Native</Link></h6>
                     </td>
                     {/* Payment method item */}
-                    <td><img src="assets/images/client/mastercard.svg" className="h-40px" alt /><span className="ms-2">****2588</span></td>
+                    <td><img src="assets/images/client/mastercard.svg" className="h-40px"  alt="spayment " /><span className="ms-2">****2588</span></td>
                     {/* Status item */}
                     <td>
                       <span className="badge bg-danger bg-opacity-10 text-danger">Cancel</span>
@@ -377,7 +378,7 @@ Page content START */}
                     <td>$425</td>
                     {/* Action item */}
                     <td>
-                      <a href="#" className="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i className="bi bi-download" /></a>
+                      <Link href="#" className="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i className="bi bi-download" /></Link>
                     </td>
                   </tr>
                 </tbody>
@@ -391,11 +392,11 @@ Page content START */}
               {/* Pagination */}
               <nav className="d-flex justify-content-center mb-0" aria-label="navigation">
                 <ul className="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                  <li className="page-item mb-0"><a className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-left" /></a></li>
-                  <li className="page-item mb-0"><a className="page-link" href="#">1</a></li>
-                  <li className="page-item mb-0 active"><a className="page-link" href="#">2</a></li>
-                  <li className="page-item mb-0"><a className="page-link" href="#">3</a></li>
-                  <li className="page-item mb-0"><a className="page-link" href="#"><i className="fas fa-angle-right" /></a></li>
+                  <li className="page-item mb-0"><Link className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-left" /></Link></li>
+                  <li className="page-item mb-0"><Link className="page-link" href="#">1</Link></li>
+                  <li className="page-item mb-0 active"><Link className="page-link" href="#">2</Link></li>
+                  <li className="page-item mb-0"><Link className="page-link" href="#">3</Link></li>
+                  <li className="page-item mb-0"><Link className="page-link" href="#"><i className="fas fa-angle-right" /></Link></li>
                 </ul>
               </nav>
             </div>

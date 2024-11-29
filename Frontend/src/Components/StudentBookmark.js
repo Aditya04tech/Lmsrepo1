@@ -19,7 +19,7 @@ Page Banner START */}
               {/* Avatar */}
               <div className="col-auto">
                 <div className="avatar avatar-xxl position-relative mt-n3">
-                  <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/09.jpg" alt />
+                  <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/09.jpg" alt="" />
                   <span className="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
                 </div>
               </div>
@@ -53,7 +53,7 @@ Page Banner START */}
           {/* Divider */}
           <hr className="d-xl-none" />
           <div className="col-12 col-xl-3 d-flex justify-content-between align-items-center">
-            <a className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
+            <Link className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</Link>
             <button className="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
               <i className="fas fa-sliders-h" />
             </button>
@@ -101,8 +101,8 @@ Page content START */}
                   </Link>
                   {/* Submenu */}
                   <ul className="nav collapse flex-column" id="collapseauthentication" data-bs-parent="#navbar-sidebar">
-                    <li className="nav-item"> <a className="nav-link" href="#">Dropdown item</a></li>
-                    <li className="nav-item"> <a className="nav-link" href="#">Dropdown item</a></li>
+                    <li className="nav-item"> <Link className="nav-link" href="#">Dropdown item</Link></li>
+                    <li className="nav-item"> <Link className="nav-link" href="#">Dropdown item</Link></li>
                   </ul>
                 </div>
               </div>
@@ -126,15 +126,15 @@ Page content START */}
                 <div className="col-sm-6 col-lg-4">
                   <div className="card shadow h-100">
                     {/* Image */}
-                    <img src="assets/images/courses/4by3/02.jpg" className="card-img-top" alt="course image" />
+                    <img src="assets/images/courses/4by3/02.jpg" className="card-img-top" alt="" />
                     <div className="card-body pb-0">
                       {/* Badge and favorite */}
                       <div className="d-flex justify-content-between mb-2">
-                        <a href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                        <a href="#" className="text-danger"><i className="fas fa-heart" /></a>
+                        <Link href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</Link>
+                        <Link href="#" className="text-danger"><i className="fas fa-heart" /></Link>
                       </div>
                       {/* Title */}
-                      <h5 className="card-title fw-normal"><a href="#">Graphic Design Masterclass</a></h5>
+                      <h5 className="card-title fw-normal"><Link href="#">Graphic Design Masterclass</Link></h5>
                       <p className="mb-2 text-truncate-2">Rooms oh fully taken by worse do Points afraid but may end Rooms
                         Points afraid but may end Rooms</p>
                       {/* Rating star */}
@@ -162,15 +162,15 @@ Page content START */}
                 <div className="col-sm-6 col-lg-4">
                   <div className="card shadow h-100">
                     {/* Image */}
-                    <img src="assets/images/courses/4by3/07.jpg" className="card-img-top" alt="course image" />
+                    <img src="assets/images/courses/4by3/07.jpg" className="card-img-top" alt="" />
                     <div className="card-body pb-0">
                       {/* Badge and favorite */}
                       <div className="d-flex justify-content-between mb-2">
-                        <a href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                        <a href="#" className="text-danger"><i className="fas fa-heart" /></a>
+                        <Link href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</Link>
+                        <Link href="#" className="text-danger"><i className="fas fa-heart" /></Link>
                       </div>
                       {/* Title */}
-                      <h5 className="card-title fw-normal"><a href="#">Deep Learning with React-Native </a></h5>
+                      <h5 className="card-title fw-normal"><Link href="#">Deep Learning with React-Native </Link></h5>
                       <p className="mb-2 text-truncate-2">Far advanced settling say finished raillery. Offered chiefly farther.</p>
                       {/* Rating star */}
                       <ul className="list-inline mb-0">
@@ -197,15 +197,15 @@ Page content START */}
                 <div className="col-sm-6 col-lg-4">
                   <div className="card shadow h-100">
                     {/* Image */}
-                    <img src="assets/images/courses/4by3/11.jpg" className="card-img-top" alt="course image" />
+                    <img src="assets/images/courses/4by3/11.jpg" className="card-img-top" alt="" />
                     <div className="card-body pb-0">
                       {/* Badge and favorite */}
                       <div className="d-flex justify-content-between mb-2">
-                        <a href="#" className="badge bg-purple bg-opacity-10 text-purple">All level</a>
-                        <a href="#" className="text-danger"><i className="fas fa-heart" /></a>
+                        <Link href="#" className="badge bg-purple bg-opacity-10 text-purple">All level</Link>
+                        <Link href="#" className="text-danger"><i className="fas fa-heart" /></Link>
                       </div>
                       {/* Title */}
-                      <h5 className="card-title fw-normal"><a href="#">Build Responsive Websites with HTML</a></h5>
+                      <h5 className="card-title fw-normal"><Link href="#">Build Responsive Websites with HTML</Link></h5>
                       <p className="mb-2 text-truncate-2">Far advanced settling say finished raillery. Offered chiefly farther.</p>
                       {/* Rating star */}
                       <ul className="list-inline mb-0">
@@ -232,15 +232,15 @@ Page content START */}
                 <div className="col-sm-6 col-lg-4">
                   <div className="card shadow h-100">
                     {/* Image */}
-                    <img src="assets/images/courses/4by3/10.jpg" className="card-img-top" alt="course image" />
+                    <img src="assets/images/courses/4by3/10.jpg" className="card-img-top" alt="" />
                     <div className="card-body pb-0">
                       {/* Badge and favorite */}
                       <div className="d-flex justify-content-between mb-2">
-                        <a href="#" className="badge bg-info bg-opacity-10 text-info">Intermediate</a>
-                        <a href="#" className="text-danger"><i className="fas fa-heart" /></a>
+                        <Link href="#" className="badge bg-info bg-opacity-10 text-info">Intermediate</Link>
+                        <Link href="#" className="text-danger"><i className="fas fa-heart" /></Link>
                       </div>
                       {/* Title */}
-                      <h5 className="card-title fw-normal"><a href="#">Bootstrap 5 From Scratch</a></h5>
+                      <h5 className="card-title fw-normal"><Link href="#">Bootstrap 5 From Scratch</Link></h5>
                       <p className="text-truncate-2 mb-2">Far advanced settling say finished raillery. Offered chiefly farther.</p>
                       {/* Rating star */}
                       <ul className="list-inline mb-0">
@@ -267,15 +267,15 @@ Page content START */}
                 <div className="col-sm-6 col-lg-4">
                   <div className="card shadow h-100">
                     {/* Image */}
-                    <img src="assets/images/courses/4by3/04.jpg" className="card-img-top" alt="course image" />
+                    <img src="assets/images/courses/4by3/04.jpg" className="card-img-top" alt="" />
                     <div className="card-body pb-0">
                       {/* Badge and favorite */}
                       <div className="d-flex justify-content-between mb-2">
-                        <a href="#" className="badge bg-purple bg-opacity-10 text-purple">All level</a>
-                        <a href="#" className="text-danger"><i className="fas fa-heart" /></a>
+                        <Link href="#" className="badge bg-purple bg-opacity-10 text-purple">All level</Link>
+                        <Link href="#" className="text-danger"><i className="fas fa-heart" /></Link>
                       </div>
                       {/* Title */}
-                      <h5 className="card-title fw-normal"><a href="#">Learn Invision</a></h5>
+                      <h5 className="card-title fw-normal"><Link href="#">Learn Invision</Link></h5>
                       <p className="mb-2">Arrived off she elderly beloved him Course regard to up he hardly.</p>
                       {/* Rating star */}
                       <ul className="list-inline mb-0">
@@ -302,15 +302,15 @@ Page content START */}
                 <div className="col-sm-6 col-lg-4">
                   <div className="card shadow h-100">
                     {/* Image */}
-                    <img src="assets/images/courses/4by3/01.jpg" className="card-img-top" alt="course image" />
+                    <img src="assets/images/courses/4by3/01.jpg" className="card-img-top" alt="" />
                     <div className="card-body pb-0">
                       {/* Badge and favorite */}
                       <div className="d-flex justify-content-between mb-2">
-                        <a href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                        <a href="#" className="text-danger"><i className="fas fa-heart" /></a>
+                        <Link href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</Link>
+                        <Link href="#" className="text-danger"><i className="fas fa-heart" /></Link>
                       </div>
                       {/* Title */}
-                      <h5 className="card-title fw-normal"><a href="#">Digital Marketing Masterclass</a></h5>
+                      <h5 className="card-title fw-normal"><Link href="#">Digital Marketing Masterclass</Link></h5>
                       <p className="text-truncate-2 mb-2">Delivered dejection necessary objection do Mr prevailed.</p>
                       {/* Rating star */}
                       <ul className="list-inline mb-0">

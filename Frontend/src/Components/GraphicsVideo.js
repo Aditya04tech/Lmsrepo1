@@ -1,8 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const GraphicsVideo = () => {
+import Nav  from './Nav'
+import Footer from './Footer'
+
+const GraphicsVideo = ({cartCount,handleLogout}) => {
   return (
+   <>
+   
+   <Nav cartCount={cartCount} handleLogout={handleLogout} />
     <div> 
       <section className="bg-blue align-items-center d-flex" style={{background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover'}}>
     <div className="container">
@@ -14,7 +20,7 @@ const GraphicsVideo = () => {
           <div className="d-flex justify-content-center">
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
-                <li className="breadcrumb-item"><a href="#">H/W&N/W</a></li>
+                <li className="breadcrumb-item"><Link href="#">H/W&N/W</Link></li>
                 <li className="breadcrumb-item active" aria-current="page">H/W&N/W Video</li>
               </ol>
             </nav>
@@ -71,13 +77,13 @@ const GraphicsVideo = () => {
             <div className="col-sm-6 col-xl-4">
               <div className="card shadow h-100">
                 {/* Image */}
-                <img src="assets/images/courses/4by3/08.jpg" className="card-img-top" alt="course image" />
+                <img src="assets/images/courses/4by3/08.jpg" className="card-img-top" alt="" />
                 {/* Card body */}
                 <div className="card-body pb-0">
                   {/* Badge and favorite */}
                   <div className="d-flex justify-content-between mb-2">
-                    <a href="#" className="badge bg-purple bg-opacity-10 text-purple">All level</a>
-                    <a href="#" className="h6 fw-light mb-0"><i className="far fa-heart" /></a>
+                    <Link href="#" className="badge bg-purple bg-opacity-10 text-purple">All level</Link>
+                    <Link href="#" className="h6 fw-light mb-0"><i className="far fa-heart" /></Link>
                   </div>
                   {/* Title */}
                   <Link to="/videoplayer1" className='card-title'><h5>Video1 Title</h5></Link>
@@ -107,15 +113,15 @@ const GraphicsVideo = () => {
             <div className="col-sm-6 col-xl-4">
               <div className="card shadow h-100">
                 {/* Image */}
-                <img src="assets/images/courses/4by3/02.jpg" className="card-img-top" alt="course image" />
+                <img src="assets/images/courses/4by3/02.jpg" className="card-img-top" alt="" />
                 <div className="card-body pb-0">
                   {/* Badge and favorite */}
                   <div className="d-flex justify-content-between mb-2">
-                    <a href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                    <a href="#" className="text-danger"><i className="fas fa-heart" /></a>
+                    <Link href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</Link>
+                    <Link href="#" className="text-danger"><i className="fas fa-heart" /></Link>
                   </div>
                   {/* Title */}
-                  <h5 className="card-title"><a href="#">Video1 Title</a></h5>
+                  <h5 className="card-title"><Link href="#">Video1 Title</Link></h5>
                   <p className="mb-2 text-truncate-2">Description</p>
                   {/* Rating star */}
                   <ul className="list-inline mb-0">
@@ -142,15 +148,15 @@ const GraphicsVideo = () => {
             <div className="col-sm-6 col-xl-4">
               <div className="card shadow h-100">
                 {/* Image */}
-                <img src="assets/images/courses/4by3/03.jpg" className="card-img-top" alt="course image" />
+                <img src="assets/images/courses/4by3/03.jpg" className="card-img-top" alt="" />
                 <div className="card-body pb-0">
                   {/* Badge and favorite */}
                   <div className="d-flex justify-content-between mb-2">
-                    <a href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                    <a href="#" className="h6 fw-light mb-0"><i className="far fa-heart" /></a>
+                    <Link href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</Link>
+                    <Link href="#" className="h6 fw-light mb-0"><i className="far fa-heart" /></Link>
                   </div>
                   {/* Title */}
-                  <h5 className="card-title"><a href="#">Create a Design System in Figma</a></h5>
+                  <h5 className="card-title"><Link href="#">Create a Design System in Figma</Link></h5>
                   <p className="mb-2 text-truncate-2">Rooms oh fully taken by worse do. Points afraid but may end afraid but may end.</p>
                   {/* Rating star */}
                   <ul className="list-inline mb-0">
@@ -177,15 +183,15 @@ const GraphicsVideo = () => {
             <div className="col-sm-6 col-xl-4">
               <div className="card shadow h-100">
                 {/* Image */}
-                <img src="assets/images/courses/4by3/07.jpg" className="card-img-top" alt="course image" />
+                <img src="assets/images/courses/4by3/07.jpg" className="card-img-top" alt="" />
                 <div className="card-body pb-0">
                   {/* Badge and favorite */}
                   <div className="d-flex justify-content-between mb-2">
-                    <a href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                    <a href="#" className="text-danger"><i className="fas fa-heart" /></a>
+                    <Link href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</Link>
+                    <Link href="#" className="text-danger"><i className="fas fa-heart" /></Link>
                   </div>
                   {/* Title */}
-                  <h5 className="card-title"><a href="#">Deep Learning with React-Native </a></h5>
+                  <h5 className="card-title"><Link href="#">Deep Learning with React-Native </Link></h5>
                   <p className="mb-2 text-truncate-2">Far advanced settling say finished raillery. Offered chiefly farther.</p>
                   {/* Rating star */}
                   <ul className="list-inline mb-0">
@@ -212,15 +218,15 @@ const GraphicsVideo = () => {
             <div className="col-sm-6 col-xl-4">
               <div className="card shadow h-100">
                 {/* Image */}
-                <img src="assets/images/courses/4by3/11.jpg" className="card-img-top" alt="course image" />
+                <img src="assets/images/courses/4by3/11.jpg" className="card-img-top" alt="" />
                 <div className="card-body pb-0">
                   {/* Badge and favorite */}
                   <div className="d-flex justify-content-between mb-2">
-                    <a href="#" className="badge bg-purple bg-opacity-10 text-purple">All level</a>
-                    <a href="#" className="text-danger"><i className="fas fa-heart" /></a>
+                    <Link href="#" className="badge bg-purple bg-opacity-10 text-purple">All level</Link>
+                    <Link href="#" className="text-danger"><i className="fas fa-heart" /></Link>
                   </div>
                   {/* Title */}
-                  <h5 className="card-title"><a href="#">Build Responsive Websites with HTML</a></h5>
+                  <h5 className="card-title"><Link href="#">Build Responsive Websites with HTML</Link></h5>
                   <p className="mb-2 text-truncate-2">Far advanced settling say finished raillery. Offered chiefly farther.</p>
                   {/* Rating star */}
                   <ul className="list-inline mb-0">
@@ -247,15 +253,15 @@ const GraphicsVideo = () => {
             <div className="col-sm-6 col-xl-4">
               <div className="card shadow h-100">
                 {/* Image */}
-                <img src="assets/images/courses/4by3/12.jpg" className="card-img-top" alt="course image" />
+                <img src="assets/images/courses/4by3/12.jpg" className="card-img-top" alt="" />
                 <div className="card-body pb-0">
                   {/* Badge and favorite */}
                   <div className="d-flex justify-content-between mb-2">
-                    <a href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                    <a href="#" className="h6 fw-light mb-0"><i className="far fa-heart" /></a>
+                    <Link href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</Link>
+                    <Link href="#" className="h6 fw-light mb-0"><i className="far fa-heart" /></Link>
                   </div>
                   {/* Title */}
-                  <h5 className="card-title"><a href="#">Build Websites with CSS</a></h5>
+                  <h5 className="card-title"><Link href="#">Build Websites with CSS</Link></h5>
                   <p className="text-truncate-2 mb-2">Far advanced settling say finished raillery. Offered chiefly farther.</p>
                   {/* Rating star */}
                   <ul className="list-inline mb-0">
@@ -282,15 +288,15 @@ const GraphicsVideo = () => {
             <div className="col-sm-6 col-xl-4">
               <div className="card shadow h-100">
                 {/* Image */}
-                <img src="assets/images/courses/4by3/05.jpg" className="card-img-top" alt="course image" />
+                <img src="assets/images/courses/4by3/05.jpg" className="card-img-top" alt="" />
                 <div className="card-body pb-0">
                   {/* Badge and favorite */}
                   <div className="d-flex justify-content-between mb-2">
-                    <a href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                    <a href="#" className="h6 fw-light mb-0"><i className="far fa-heart" /></a>
+                    <Link href="#" className="badge bg-success bg-opacity-10 text-success">Beginner</Link>
+                    <Link href="#" className="h6 fw-light mb-0"><i className="far fa-heart" /></Link>
                   </div>
                   {/* Title */}
-                  <h5 className="card-title"><a href="#">The Complete Web Development in python</a></h5>
+                  <h5 className="card-title"><Link href="#">The Complete Web Development in python</Link></h5>
                   <p className="text-truncate-2 mb-2">Mention Mr manners opinion if garrets enabled.</p>
                   {/* Rating star */}
                   <ul className="list-inline mb-0">
@@ -317,15 +323,15 @@ const GraphicsVideo = () => {
             <div className="col-sm-6 col-xl-4">
               <div className="card shadow h-100">
                 {/* Image */}
-                <img src="assets/images/courses/4by3/06.jpg" className="card-img-top" alt="course image" />
+                <img src="assets/images/courses/4by3/06.jpg" className="card-img-top" alt="" />
                 <div className="card-body pb-0">
                   {/* Badge and favorite */}
                   <div className="d-flex justify-content-between mb-2">
-                    <a href="#" className="badge bg-info bg-opacity-10 text-info">Intermediate</a>
-                    <a href="#" className="h6 fw-light mb-0"><i className="far fa-heart" /></a>
+                    <Link href="#" className="badge bg-info bg-opacity-10 text-info">Intermediate</Link>
+                    <Link href="#" className="h6 fw-light mb-0"><i className="far fa-heart" /></Link>
                   </div>
                   {/* Title */}
-                  <h5 className="card-title"><a href="#">Angular – The Complete Guider</a></h5>
+                  <h5 className="card-title"><Link href="#">Angular – The Complete Guider</Link></h5>
                   <p className="text-truncate-2 mb-2">Rooms oh fully taken by worse do. Points afraid but may end.</p>
                   {/* Rating star */}
                   <ul className="list-inline mb-0">
@@ -352,15 +358,15 @@ const GraphicsVideo = () => {
             <div className="col-sm-6 col-xl-4">
               <div className="card shadow h-100">
                 {/* Image */}
-                <img src="assets/images/courses/4by3/10.jpg" className="card-img-top" alt="course image" />
+                <img src="assets/images/courses/4by3/10.jpg" className="card-img-top" alt="" />
                 <div className="card-body pb-0">
                   {/* Badge and favorite */}
                   <div className="d-flex justify-content-between mb-2">
-                    <a href="#" className="badge bg-info bg-opacity-10 text-info">Intermediate</a>
-                    <a href="#" className="text-danger"><i className="fas fa-heart" /></a>
+                    <Link href="#" className="badge bg-info bg-opacity-10 text-info">Intermediate</Link>
+                    <Link href="#" className="text-danger"><i className="fas fa-heart" /></Link>
                   </div>
                   {/* Title */}
-                  <h5 className="card-title"><a href="#">Bootstrap 5 From Scratch</a></h5>
+                  <h5 className="card-title"><Link href="#">Bootstrap 5 From Scratch</Link></h5>
                   <p className="text-truncate-2 mb-2">Far advanced settling say finished raillery. Offered chiefly farther.</p>
                   {/* Rating star */}
                   <ul className="list-inline mb-0">
@@ -389,12 +395,12 @@ const GraphicsVideo = () => {
           <div className="col-12">
             <nav className="mt-4 d-flex justify-content-center" aria-label="navigation">
               <ul className="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                <li className="page-item mb-0"><a className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-double-left" /></a></li>
-                <li className="page-item mb-0"><a className="page-link" href="#">1</a></li>
-                <li className="page-item mb-0 active" aria-current="page"><a className="page-link" href="#">2</a></li>
-                <li className="page-item mb-0"><a className="page-link" href="#">..</a></li>
-                <li className="page-item mb-0"><a className="page-link" href="#">6</a></li>
-                <li className="page-item mb-0"><a className="page-link" href="#"><i className="fas fa-angle-double-right" /></a></li>
+                <li className="page-item mb-0"><Link className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-double-left" /></Link></li>
+                <li className="page-item mb-0"><Link className="page-link" href="#">1</Link></li>
+                <li className="page-item mb-0 active" aria-current="page"><Link className="page-link" href="#">2</Link></li>
+                <li className="page-item mb-0"><Link className="page-link" href="#">..</Link></li>
+                <li className="page-item mb-0"><Link className="page-link" href="#">6</Link></li>
+                <li className="page-item mb-0"><Link className="page-link" href="#"><i className="fas fa-angle-double-right" /></Link></li>
               </ul>
             </nav>
           </div>
@@ -503,9 +509,9 @@ const GraphicsVideo = () => {
                       </div>
                     </div>
                     {/* Collapse button */}
-                    <a className=" p-0 mb-0 mt-2 btn-more d-flex align-items-center" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                    <Link className=" p-0 mb-0 mt-2 btn-more d-flex align-items-center" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
                       See <span className="see-more ms-1">more</span><span className="see-less ms-1">less</span><i className="fas fa-angle-down ms-2" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 {/* Category END */}
@@ -617,6 +623,8 @@ const GraphicsVideo = () => {
     </div>
   </section>
     </div>
+    <Footer/>
+   </>
   )
 }
 

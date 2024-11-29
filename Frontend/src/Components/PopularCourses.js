@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const PopularCourses = () => {
   const [activeTab, setActiveTab] = useState('Web Design'); // default tab
@@ -154,7 +155,7 @@ const PopularCourses = () => {
             {
               img: 'assets/images/courses/4by3/09.jpg',
               badge: 'All level',
-              title: 'JavaScript: full Understanding',
+             
               description: 'Far advanced settling say finished raillery. Offered cheifly farther.',
               rating: 5.0,
               time: '35h 20m',
@@ -200,13 +201,13 @@ const PopularCourses = () => {
               {courses[activeTab].map((course, index) => (
                 <div className="col-sm-6 col-lg-4 col-xl-3" key={index}>
                   <div className="card shadow h-100">
-                    <img src={course.img} className="card-img-top" alt="course image" />
+                    <img src={course.img} className="card-img-top" alt="" />
                     <div className="card-body pb-0">
                       <div className="d-flex justify-content-between mb-2">
-                        <a href="#" className={`badge bg-purple bg-opacity-10 text-purple`}>{course.badge}</a>
-                        <a href="#" className="h6 mb-0"><i className="far fa-heart"></i></a>
+                        <Link href="#" className={`badge bg-purple bg-opacity-10 text-purple`}>{course.badge}</Link>
+                        <Link href="#" className="h6 mb-0"><i className="far fa-heart"></i></Link>
                       </div>
-                      <h5 className="card-title fw-normal"><a href="#">{course.title}</a></h5>
+                      <h5 className="card-title fw-normal"><Link href="#">{course.title}</Link></h5>
                       <p className="mb-2 text-truncate-2">{course.description}</p>
                       <ul className="list-inline mb-0">
                         {[...Array(5)].map((star, i) => (

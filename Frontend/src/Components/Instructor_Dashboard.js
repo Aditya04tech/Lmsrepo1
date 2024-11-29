@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import PureCounter from '@srexi/purecounterjs';
-// import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LabelList } from 'recharts';
 import Chart from './Chart';
 import Internal_Footer from './Internal_Footer'; 
 import { Link } from 'react-router-dom';
-import Footer from './Footer';
 
 
 const Instructor_Dashboard = () => {
@@ -12,21 +10,17 @@ const Instructor_Dashboard = () => {
     // Initialize the counter after the component mounts
     new PureCounter();
   }, []); 
- 
+
   return (
     <div>
    <main>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-  {/* ======================= 
+  {/* =======================
     Page Banner START */}
   <section className="pt-0">
     {/* Main banner background image */}
     <div className="container-fluid px-0">
-      {/* <div className="bg-blue h-100px h-md-200px rounded-0" style={{background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover'}}>
-      </div> */}
+      <div className="bg-blue h-100px h-md-200px rounded-0" style={{background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover'}}>
+      </div>
     </div>
     <div className="container mt-n4">
       <div className="row">
@@ -37,7 +31,7 @@ const Instructor_Dashboard = () => {
               {/* Avatar */}
               <div className="col-auto mt-4 mt-md-0">
                 <div className="avatar avatar-xxl mt-n3">
-                  <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/01.jpg" alt />
+                  <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/01.jpg" alt="" />
                 </div>
               </div>
               {/* Profile info */}
@@ -62,7 +56,7 @@ const Instructor_Dashboard = () => {
           {/* Divider */}
           <hr className="d-xl-none" />
           <div className="col-12 col-xl-3 d-flex justify-content-between align-items-center">
-            <a className="h6 mb-0 fw-bold d-xl-none" to="#">Menu</a>
+            <Link className="h6 mb-0 fw-bold d-xl-none" to="#">Menu</Link>
             <button className="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
               <i className="fas fa-sliders-h" />
             </button>
@@ -212,7 +206,204 @@ const Instructor_Dashboard = () => {
           </div>
           {/* Chart END */}
           {/* Course List table START */}
-         
+          <div className="row">
+            <div className="col-12">
+              <div className="card border bg-transparent rounded-3 mt-5">
+                {/* Card header START */}
+                <div className="card-header bg-transparent border-bottom">
+                  <div className="d-sm-flex justify-content-sm-between align-items-center">
+                    <h3 className="mb-2 mb-sm-0">Most Selling Courses</h3>
+                    <Link to="#" className="btn btn-sm btn-primary-soft mb-0">View all</Link>
+                  </div>
+                </div>
+                {/* Card header END */}
+                {/* Card body START */}
+                <div className="card-body">
+                  <div className="table-responsive border-0 rounded-3">
+                    {/* Table START */}
+                    <table className="table table-dark-gray align-middle p-4 mb-0">
+                      {/* Table head */}
+                      <thead>
+                        <tr>
+                          <th scope="col" className="border-0 rounded-start">Course Name</th>
+                          <th scope="col" className="border-0">Selling</th>
+                          <th scope="col" className="border-0">Amount</th>
+                          <th scope="col" className="border-0">Period</th>
+                          <th scope="col" className="border-0 rounded-end">Action</th>
+                        </tr>
+                      </thead>
+                      {/* Table body START */}
+                      <tbody>
+                        {/* Table item */}
+                        <tr>
+                          {/* Course item */}
+                          <td>
+                            <div className="d-flex align-items-center">
+                              {/* Image */}
+                              <div className="w-60px">
+                                <img src="assets/images/courses/4by3/08.jpg" className="rounded" alt="" />
+                              </div>
+                              {/* Title */}
+                              <h6 className="mb-0 ms-2 table-responsive-title">	
+                                <Link to="#">Building Scalable APIs with GraphQL</Link>
+                              </h6>
+                            </div>
+                          </td>
+                          {/* Selling item */}
+                          <td>34</td>
+                          {/* Amount item */}
+                          <td>$1,25,478</td>
+                          {/* Period item */}
+                          <td>
+                            <span className="badge bg-primary bg-opacity-10 text-primary">9 months</span>
+                          </td>
+                          {/* Action item */}
+                          <td>
+                            <Link to="#"className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                            <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                          </td>
+                        </tr>
+                        {/* Table item */}
+                        <tr>
+                          {/* Course item */}
+                          <td>
+                            <div className="d-flex align-items-center">
+                              {/* Image */}
+                              <div className="w-60px">
+                                <img src="assets/images/courses/4by3/10.jpg" className="rounded" alt="" />
+                              </div>
+                              {/* Title */}
+                              <h6 className="mb-0 ms-2 table-responsive-title">	
+                                <Link to="#">Bootstrap 5 From Scratch</Link>
+                              </h6>
+                            </div>
+                          </td>
+                          {/* Selling item */}
+                          <td>45</td>
+                          {/* Amount item */}
+                          <td>$2,85,478</td>
+                          {/* Period item */}
+                          <td>
+                            <span className="badge bg-primary bg-opacity-10 text-primary">6 months</span>
+                          </td>
+                          {/* Action item */}
+                          <td>
+                            <Link to="#"className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                            <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                          </td>
+                        </tr>
+                        {/* Table item */}
+                        <tr>
+                          {/* Course item */}
+                          <td>
+                            <div className="d-flex align-items-center">
+                              {/* Image */}
+                              <div className="w-60px">
+                                <img src="assets/images/courses/4by3/02.jpg" className="rounded" alt="" />
+                              </div>
+                              {/* Title */}
+                              <h6 className="mb-0 ms-2 table-responsive-title">	
+                                <Link to="#">Graphic Design Masterclass</Link>
+                              </h6>
+                            </div>
+                          </td>
+                          {/* Selling item */}
+                          <td>21</td>
+                          {/* Amount item */}
+                          <td>$85,478</td>
+                          {/* Period item */}
+                          <td>
+                            <span className="badge bg-primary bg-opacity-10 text-primary">4 months</span>
+                          </td>
+                          {/* Action item */}
+                          <td>
+                            <Link to="#"className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                            <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                          </td>
+                        </tr>
+                        {/* Table item */}
+                        <tr>
+                          {/* Course item */}
+                          <td>
+                            <div className="d-flex align-items-center">
+                              {/* Image */}
+                              <div className="w-60px">
+                                <img src="assets/images/courses/4by3/04.jpg" className="rounded" alt="" />
+                              </div>
+                              {/* Title */}
+                              <h6 className="mb-0 ms-2 table-responsive-title">	
+                                <Link to="#">Learn Invision</Link>
+                              </h6>
+                            </div>
+                          </td>
+                          {/* Selling item */}
+                          <td>28</td>
+                          {/* Amount item */}
+                          <td>$98,478</td>
+                          {/* Period item */}
+                          <td>
+                            <span className="badge bg-primary bg-opacity-10 text-primary">8 months</span>
+                          </td>
+                          {/* Action item */}
+                          <td>
+                            <Link to="#"className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                            <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                          </td>
+                        </tr>
+                        {/* Table item */}
+                        <tr>
+                          {/* Course item */}
+                          <td>
+                            <div className="d-flex align-items-center">
+                              {/* Image */}
+                              <div className="w-60px">
+                                <img src="assets/images/courses/4by3/06.jpg" className="rounded" alt="" />
+                              </div>
+                              {/* Title */}
+                              <h6 className="mb-0 ms-2 table-responsive-title">	
+                                <Link to="#">Angular – The Complete Guider</Link>
+                              </h6>
+                            </div>
+                          </td>
+                          {/* Selling item */}
+                          <td>38</td>
+                          {/* Amount item */}
+                          <td>$1,02,478</td>
+                          {/* Period item */}
+                          <td>
+                            <span className="badge bg-primary bg-opacity-10 text-primary">1 year</span>
+                          </td>
+                          {/* Action item */}
+                          <td>
+                            <Link to="#"className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                            <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                      {/* Table body END */}
+                    </table>
+                    {/* Table END */}
+                  </div>
+                  {/* Pagination */}
+                  <div className="d-sm-flex justify-content-sm-between align-items-sm-center mt-3">
+                    {/* Content */}
+                    <p className="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
+                    {/* Pagination */}
+                    <nav className="d-flex justify-content-center mb-0" aria-label="navigation">
+                      <ul className="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                        <li className="page-item mb-0"><Link className="page-link" to="#" tabIndex={-1}><i className="fas fa-angle-left" /></Link></li>
+                        <li className="page-item mb-0"><Link className="page-link" to="#">1</Link></li>
+                        <li className="page-item mb-0 active"><Link className="page-link" to="#">2</Link></li>
+                        <li className="page-item mb-0"><Link className="page-link" to="#">3</Link></li>
+                        <li className="page-item mb-0"><Link className="page-link" to="#"><i className="fas fa-angle-right" /></Link></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                {/* Card body START */}
+              </div>
+            </div>
+          </div>
           {/* Course List table END */}
         </div>
         {/* Main content END */}
@@ -222,7 +413,7 @@ const Instructor_Dashboard = () => {
 </main>
 
 
-<Footer/> 
+<Internal_Footer/>
 
     </div>
   )

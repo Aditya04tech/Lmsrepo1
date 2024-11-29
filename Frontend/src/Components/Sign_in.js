@@ -69,8 +69,7 @@ const SignIn = () => {
               <div className="col-12 col-lg-6 m-auto">
                 <div className="row my-5">
                   <div className="col-sm-10 col-xl-8 m-auto">
-                    <span className="mb-0 fs-1">👋</span>
-                    <h1 className="fs-2">Login into Eduport!</h1>
+                    <h1 className="fs-2">Login into LMS By PSK Technologies Pvt.Ltd!</h1>
                     <p className="lead mb-4">
                       Nice to see you! Please log in with your account.
                     </p>
@@ -180,16 +179,16 @@ const SignIn = () => {
                         </p>
                       </div>
                       <div className="col-xxl-6 d-grid">
-                        <a href="#" className="btn bg-google mb-2 mb-xxl-0">
+                        <Link href="#" className="btn bg-google mb-2 mb-xxl-0">
                           <i className="fab fa-fw fa-google text-white me-2" />{" "}
                           Login with Google
-                        </a>
+                        </Link>
                       </div>
                       <div className="col-xxl-6 d-grid">
-                        <a href="#" className="btn bg-facebook mb-0">
+                        <Link href="#" className="btn bg-facebook mb-0">
                           <i className="fab fa-fw fa-facebook-f me-2" /> Login
                           with Facebook
-                        </a>
+                        </Link>
                       </div>
                     </div>
 

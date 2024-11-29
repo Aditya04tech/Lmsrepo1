@@ -15,7 +15,7 @@ const NetworkingVideo = () => {
           <div className="d-flex justify-content-center">
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
-                <li className="breadcrumb-item"><a href="#">H/W&N/W</a></li>
+                <li className="breadcrumb-item"><Link href="#">H/W&N/W</Link></li>
                 <li className="breadcrumb-item active" aria-current="page">H/W&N/W Video</li>
               </ol>
             </nav>
@@ -38,7 +38,7 @@ const NetworkingVideo = () => {
     <div className="courses">
       <div className="d-flex justify-content-between align-items-center">
         <h4>My Videos</h4>
-        <p><a href="#">view all videos</a></p>
+        <p><Link href="#">view all videos</Link></p>
       </div>
       <div className="video-player">
         <video controls>
@@ -118,19 +118,19 @@ const NetworkingVideo = () => {
     </div>
     <div className="videos">
       <h4>My Courses</h4>
-      <p><a href="#">view all courses</a></p>
+      <p><Link href="#">view all courses</Link></p>
       <ul className="nav nav-tabs">
         <li className="nav-item">
-          <a className="nav-link active" href="#">All Courses</a>
+          <Link className="nav-link active" href="#">All Courses</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Current</a>
+          <Link className="nav-link" href="#">Current</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Archived</a>
+          <Link className="nav-link" href="#">Archived</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Upcoming</a>
+          <Link className="nav-link" href="#">Upcoming</Link>
         </li>
       </ul>
       <div className="course-item">

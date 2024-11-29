@@ -1,73 +1,13 @@
-import React, {useState,useEffect} from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import Nav from './Nav'
-import Footer from './Footer';
-const CourseCategory1 = () => {
-  const [cart, setCart] = useState([]);
-  const [cartCount, setCartCount] = useState(0);
-  const navigate = useNavigate();
-  useEffect(() => {
-    const savedCart = localStorage.getItem("cart");
-    if (savedCart) {
-      setCart(JSON.parse(savedCart));
-      localStorage.removeItem("cart");
-    }
-  }, []);
-
-  useEffect(() => {
-    // Update cart count whenever the cart state changes
-    setCartCount(cart.reduce((count, item) => count + item.quantity, 0));
-  }, [cart]);
-
-  const handleAddToCart = (product) => {
-    const existsInCart = cart.find((item) => item.id === product.id);
-    if (existsInCart) {
-      setCart(
-        cart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
-    }
-  };
-
-  const handleAdd = (product) => {
-    setCart(
-      cart.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
-  };
-
-  const handleRemove = (product, isDelete = false) => {
-    if (isDelete) {
-      setCart(cart.filter((item) => item.id !== product.id));
-    } else {
-      const updatedCart = cart.map((item) =>
-        item.id === product.id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      );
-      setCart(updatedCart);
-    }
-  };
-
-  const handleClearCart = () => {
-    setCart([]);
-  };
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setCart([]);
-    window.location.reload();
-    navigate("/");
-  };
+import Footer from './Footer'
+const GraphicCourse = ({cartCount,handleLogout}) => {
   return ( 
   
     <>
-     <Nav cartCount={cartCount} handleLogout={handleLogout} />
+
+<Nav cartCount={cartCount} handleLogout={handleLogout} />
       {/* <Nav/> */}
     <div>
     <br />
@@ -86,7 +26,7 @@ const CourseCategory1 = () => {
           <div className="row align-items-center">
             {/* Image */}
             <div className="col-6 col-md-3 text-center order-1">
-              <img src="assets/images/element/cat1.png" alt />
+              <img src="assets/images/element/cat1.png" alt="" />
             </div>
             {/* Content */}
             <div className="col-md-6 px-md-5 text-center position-relative order-md-2 mb-5 mb-md-0">
@@ -115,7 +55,7 @@ const CourseCategory1 = () => {
             </div>
             {/* Image */}
             <div className="col-6 col-md-3 text-center order-3" >
-            <img src="/assets/images/element/cat2.png"  alt="Cat" />
+            <img src="/assets/images/element/cat2.png"  alt="" />
             </div>
           </div> {/* Row END */}
         </div>
@@ -141,7 +81,7 @@ Categories START */}
         <div className="card card-body  text-center position-relative btn-transition p-4">
           {/* Image */}
           <div className="col-md-12">
-                <img src="assets/images/courses/4by3/canva.png" alt="card image"  className="img-border" />
+                <img src="assets/images/courses/4by3/canva.png"alt=""  className="img-border" />
               </div>
           {/* Title */}
           <Link to="/courselist" className="stretched-link">
@@ -155,7 +95,7 @@ Categories START */}
         <div className="card card-body  text-center position-relative btn-transition p-4">
           {/* Image */}
           <div className="col-md-12">
-                <img src="assets/images/courses/4by3/Postermy.png" alt="card image"  className="img-border" />
+                <img src="assets/images/courses/4by3/Postermy.png"alt=""  className="img-border" />
               </div>
           {/* Title */}
           <Link to="/courselist" className="stretched-link">
@@ -169,7 +109,7 @@ Categories START */}
         <div className="card card-body  text-center position-relative btn-transition p-4">
           {/* Image */}
           <div className="col-md-12">
-                <img src="assets/images/courses/4by3/Figma.png" alt="card image"  className="img-border" />
+                <img src="assets/images/courses/4by3/Figma.png"alt=""  className="img-border" />
               </div>
           {/* Title */}
           <Link to="/courselist" className="stretched-link">
@@ -183,7 +123,7 @@ Categories START */}
         <div className="card card-body  text-center position-relative btn-transition p-4">
           {/* Image */}
           <div className="col-md-12">
-                <img src="assets/images/courses/4by3/Renderforest.png" alt="card image"  className="img-border" />
+                <img src="assets/images/courses/4by3/Renderforest.png"alt=""  className="img-border" />
               </div>
           {/* Title */}
           <Link to="/courselist" className="stretched-link">
@@ -196,7 +136,7 @@ Categories START */}
         <div className="card card-body  text-center position-relative btn-transition p-4">
           {/* Image */}
           <div className="col-md-12">
-                <img src="assets/images/courses/4by3/Figma.png" alt="card image"  className="img-border" />
+                <img src="assets/images/courses/4by3/Figma.png"alt=""  className="img-border" />
               </div>
           {/* Title */}
           <Link to="/courselist" className="stretched-link">
@@ -210,7 +150,7 @@ Categories START */}
         <div className="card card-body  text-center position-relative btn-transition p-4">
           {/* Image */}
           <div className="col-md-12">
-                <img src="assets/images/courses/4by3/Figma.png" alt="card image"  className="img-border" />
+                <img src="assets/images/courses/4by3/Figma.png"alt=""  className="img-border" />
               </div>
           {/* Title */}
           <Link to="/courselist" className="stretched-link">
@@ -240,14 +180,14 @@ Action box START */}
           <div className="bg-primary bg-opacity-10 rounded-3 p-5 h-100">
             {/* Image */}
             <div className="position-absolute bottom-0 end-0 me-3">
-              <img src="assets/images/element/08.svg" className="h-100px h-sm-200px" alt />
+              <img src="assets/images/element/08.svg" className="h-100px h-sm-200px" alt="" />
             </div>	
             {/* Content */}
             <div className="row">
               <div className="col-sm-8 position-relative">
                 <h3 className="mb-1">Earn a Certificate</h3>
                 <p className="mb-3 h5 fw-light lead">Get the right professional certificate program for you.</p>
-                <a href="#" className="btn btn-primary mb-0"> Programs</a>
+                <Link href="#" className="btn btn-primary mb-0"> Programs</Link>
               </div>
             </div>
           </div>
@@ -257,14 +197,14 @@ Action box START */}
           <div className="bg-secondary rounded-3 bg-opacity-10 p-5 h-100">
             {/* Image */}
             <div className="position-absolute bottom-0 end-0 me-3">
-              <img src="assets/images/element/15.svg" className="h-100px h-sm-300px" alt />
+              <img src="assets/images/element/15.svg" className="h-100px h-sm-300px" alt="" />
             </div>	
             {/* Content */}
             <div className="row">
               <div className="col-sm-8 position-relative">
                 <h3 className="mb-1">Best Rated Courses</h3>
                 <p className="mb-3 h5 fw-light lead">Enroll now in the most popular and best rated courses.</p>
-                <a href="#" className="btn btn-warning mb-0">View Courses</a>
+                <Link href="#" className="btn btn-warning mb-0">View Courses</Link>
               </div>
             </div>
           </div>
@@ -278,4 +218,4 @@ Action box START */}
   )
 }
 
-export default CourseCategory1
+export default GraphicCourse

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 const PureCounter = ({
   start = 0,
@@ -10,8 +10,6 @@ const PureCounter = ({
   formater = 'en-US',
   selector = '.purecounter',
 }) => {
-  const [count] = useState(start);
-
   useEffect(() => {
     const elements = document.querySelectorAll(selector);
     if (elements.length === 0) return;
@@ -21,10 +19,10 @@ const PureCounter = ({
       let current = config.start;
 
       const interval = setInterval(() => {
-        current = config.start < config.end 
-          ? Math.min(config.end, current + step) 
+        current = config.start < config.end
+          ? Math.min(config.end, current + step)
           : Math.max(config.end, current - step);
-          
+
         el.innerHTML = formatNumber(current, config);
 
         if (current === config.end) {
@@ -74,9 +72,7 @@ const PureCounter = ({
     return () => observer.disconnect();
   }, [start, end, duration, delay, pulse, decimals, formater, selector]);
 
-  return (
-  <></>
-  );
+  return <></>;
 };
 
 export default PureCounter;

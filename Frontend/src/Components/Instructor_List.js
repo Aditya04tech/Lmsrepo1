@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from './Footer'
+import { Link } from 'react-router-dom';
 
 const Instructor_List = () => {
   return (
@@ -18,7 +19,7 @@ Page Banner START */}
             <div className="d-flex justify-content-center">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
-                  <li className="breadcrumb-item"><a href="#">Home</a></li>
+                  <li className="breadcrumb-item"><Link href="#">Home</Link></li>
                   <li className="breadcrumb-item active" aria-current="page">instructor list</li>
                 </ol>
               </nav>
@@ -77,7 +78,7 @@ Inner part START */}
         </div>
         {/* Button */}
         <div className="col-sm-6 col-xl-2 mt-3 mt-xl-0 d-grid">
-          <a href="#" className="btn btn-lg btn-primary mb-0">Filter Results</a>
+          <Link href="#" className="btn btn-lg btn-primary mb-0">Filter Results</Link>
         </div>
       </div>
       {/* Search option END */}
@@ -97,7 +98,7 @@ Inner part START */}
                   {/* Title */}
                   <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                     <div>
-                      <h5 className="card-title mb-0"><a href="#">Dennis Barrett</a></h5>
+                      <h5 className="card-title mb-0"><Link href="#">Dennis Barrett</Link></h5>
                       <p className="small mb-2 mb-sm-0">Professor at Sigma College</p>
                     </div>
                     <span className="h6 fw-light">4.3<i className="fas fa-star text-warning ms-1" /></span>
@@ -111,16 +112,16 @@ Inner part START */}
                     {/* Social button */}
                     <ul className="list-inline mb-0 mt-3 mt-sm-0">
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></a> 
+                        <Link className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></a> 
+                        <Link className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></a> 
+                        <Link className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></a> 
+                        <Link className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></Link> 
                       </li>
                     </ul>
                   </div>
@@ -144,7 +145,7 @@ Inner part START */}
                   {/* Title */}
                   <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                     <div>
-                      <h5 className="card-title mb-0"><a href="#">Jacqueline Miller</a></h5>
+                      <h5 className="card-title mb-0"><Link href="#">Jacqueline Miller</Link></h5>
                       <p className="small mb-2 mb-sm-0">Professor at Eastbay College</p>
                     </div>
                     <span className="h6 fw-light">4.0<i className="fas fa-star text-warning ms-1" /></span>
@@ -158,16 +159,16 @@ Inner part START */}
                     {/* Social button */}
                     <ul className="list-inline mb-0 mt-3 mt-sm-0">
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></a> 
+                        <Link className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></a> 
+                        <Link className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></a> 
+                        <Link className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></a> 
+                        <Link className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></Link> 
                       </li>
                     </ul>
                   </div>
@@ -191,7 +192,7 @@ Inner part START */}
                   {/* Title */}
                   <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                     <div>
-                      <h5 className="card-title mb-0"><a href="#">Louis Ferguson</a></h5>
+                      <h5 className="card-title mb-0"><Link href="#">Louis Ferguson</Link></h5>
                       <p className="small mb-2 mb-sm-0">Professor at Cambridge College</p>
                     </div>
                     <span className="h6 fw-light">3.8<i className="fas fa-star text-warning ms-1" /></span>
@@ -205,16 +206,16 @@ Inner part START */}
                     {/* Social button */}
                     <ul className="list-inline mb-0 mt-3 mt-sm-0">
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></a> 
+                        <Link className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></a> 
+                        <Link className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></a> 
+                        <Link className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></a> 
+                        <Link className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></Link> 
                       </li>
                     </ul>
                   </div>
@@ -238,7 +239,7 @@ Inner part START */}
                   {/* Title */}
                   <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                     <div>
-                      <h5 className="card-title mb-0"><a href="#">Frances Guerrero</a></h5>
+                      <h5 className="card-title mb-0"><Link href="#">Frances Guerrero</Link></h5>
                       <p className="small mb-2 mb-sm-0">Professor at LPU College</p>
                     </div>
                     <span className="h6 fw-light">4.5<i className="fas fa-star text-warning ms-1" /></span>
@@ -252,16 +253,16 @@ Inner part START */}
                     {/* Social button */}
                     <ul className="list-inline mb-0 mt-3 mt-sm-0">
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></a> 
+                        <Link className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></a> 
+                        <Link className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></a> 
+                        <Link className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></a> 
+                        <Link className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></Link> 
                       </li>
                     </ul>
                   </div>
@@ -285,7 +286,7 @@ Inner part START */}
                   {/* Title */}
                   <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                     <div>
-                      <h5 className="card-title mb-0"><a href="#">Amanda Reed</a></h5>
+                      <h5 className="card-title mb-0"><Link href="#">Amanda Reed</Link></h5>
                       <p className="small mb-2 mb-sm-0">Professor at NIT College</p>
                     </div>
                     <span className="h6 fw-light">4.8<i className="fas fa-star text-warning ms-1" /></span>
@@ -299,16 +300,16 @@ Inner part START */}
                     {/* Social button */}
                     <ul className="list-inline mb-0 mt-3 mt-sm-0">
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></a> 
+                        <Link className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></a> 
+                        <Link className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></a> 
+                        <Link className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></a> 
+                        <Link className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></Link> 
                       </li>
                     </ul>
                   </div>
@@ -332,7 +333,7 @@ Inner part START */}
                   {/* Title */}
                   <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                     <div>
-                      <h5 className="card-title mb-0"><a href="#">Lori Stevens</a></h5>
+                      <h5 className="card-title mb-0"><Link href="#">Lori Stevens</Link></h5>
                       <p className="small mb-2 mb-sm-0">Professor at Oxford University</p>
                     </div>
                     <span className="h6 fw-light">4.2<i className="fas fa-star text-warning ms-1" /></span>
@@ -346,16 +347,16 @@ Inner part START */}
                     {/* Social button */}
                     <ul className="list-inline mb-0 mt-3 mt-sm-0">
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></a> 
+                        <Link className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></a> 
+                        <Link className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></a> 
+                        <Link className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></a> 
+                        <Link className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></Link> 
                       </li>
                     </ul>
                   </div>
@@ -379,7 +380,7 @@ Inner part START */}
                   {/* Title */}
                   <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                     <div>
-                      <h5 className="card-title mb-0"><a href="#">Samuel Bishop</a></h5>
+                      <h5 className="card-title mb-0"><Link href="#">Samuel Bishop</Link></h5>
                       <p className="small mb-2 mb-sm-0">Professor at VNSGU College</p>
                     </div>
                     <span className="h6 fw-light">4.5<i className="fas fa-star text-warning ms-1" /></span>
@@ -393,16 +394,16 @@ Inner part START */}
                     {/* Social button */}
                     <ul className="list-inline mb-0 mt-3 mt-sm-0">
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></a> 
+                        <Link className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></a> 
+                        <Link className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></a> 
+                        <Link className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></a> 
+                        <Link className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></Link> 
                       </li>
                     </ul>
                   </div>
@@ -426,7 +427,7 @@ Inner part START */}
                   {/* Title */}
                   <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                     <div>
-                      <h5 className="card-title mb-0"><a href="#">Joan Wallace</a></h5>
+                      <h5 className="card-title mb-0"><Link href="#">Joan Wallace</Link></h5>
                       <p className="small mb-2 mb-sm-0">Professor at LPU College</p>
                     </div>
                     <span className="h6 fw-light">4.6<i className="fas fa-star text-warning ms-1" /></span>
@@ -440,16 +441,16 @@ Inner part START */}
                     {/* Social button */}
                     <ul className="list-inline mb-0 mt-3 mt-sm-0">
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></a> 
+                        <Link className="mb-0 me-1 text-facebook" href="#"><i className="fab fa-fw fa-facebook-f" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></a> 
+                        <Link className="mb-0 me-1 text-instagram-gradient" href="#"><i className="fab fa-fw fa-instagram" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></a> 
+                        <Link className="mb-0 me-1 text-twitter" href="#"><i className="fab fa-fw fa-twitter" /></Link> 
                       </li>
                       <li className="list-inline-item"> 
-                        <a className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></a> 
+                        <Link className="mb-0 text-linkedin" href="#"><i className="fab fa-fw fa-linkedin-in" /></Link> 
                       </li>
                     </ul>
                   </div>
@@ -464,12 +465,12 @@ Inner part START */}
       {/* Pagination START */}
       <nav className="mt-4 d-flex justify-content-center" aria-label="navigation">
         <ul className="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-          <li className="page-item mb-0"><a className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-double-left" /></a></li>
-          <li className="page-item mb-0"><a className="page-link" href="#">1</a></li>
-          <li className="page-item mb-0 active"><a className="page-link" href="#">2</a></li>
-          <li className="page-item mb-0"><a className="page-link" href="#">..</a></li>
-          <li className="page-item mb-0"><a className="page-link" href="#">6</a></li>
-          <li className="page-item mb-0"><a className="page-link" href="#"><i className="fas fa-angle-double-right" /></a></li>
+          <li className="page-item mb-0"><Link className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-double-left" /></Link></li>
+          <li className="page-item mb-0"><Link className="page-link" href="#">1</Link></li>
+          <li className="page-item mb-0 active"><Link className="page-link" href="#">2</Link></li>
+          <li className="page-item mb-0"><Link className="page-link" href="#">..</Link></li>
+          <li className="page-item mb-0"><Link className="page-link" href="#">6</Link></li>
+          <li className="page-item mb-0"><Link className="page-link" href="#"><i className="fas fa-angle-double-right" /></Link></li>
         </ul>
       </nav>
       {/* Pagination END */}
@@ -508,7 +509,7 @@ Action box START */}
               </div>
               {/* Button */}
               <div className="col-lg-5 text-lg-end">
-                <a href="#" className="btn btn-dark mb-0">Start Teaching today</a>
+                <Link href="#" className="btn btn-dark mb-0">Start Teaching today</Link>
               </div>
             </div>
           </div>

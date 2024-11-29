@@ -1,142 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Internal_Footer from './Internal_Footer';
-import style from "../Components/Css/style.module.css";
-import Footer from './Footer';
+import React from 'react'
+import Internal_Footer from './Internal_Footer'
+import { Link } from 'react-router-dom'
 
-const Instructor_Courses = ({ videoPreview: propVideoPreview }) => {
-  const [videoList, setVideoList] = useState([]); 
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [videoTitle, setVideoTitle] = useState('');
-  const [uploading, setUploading] = useState(false);
-  const [videoPreview, setVideoPreview] = useState(propVideoPreview || null);
-  const [playingVideoId, setPlayingVideoId] = useState(null);
-  const [selectedVideos, setSelectedVideos] = useState([]); // Store selected video IDs
-  const [playlists, setPlaylists] = useState([]); // Store playlists
-  const [newPlaylistName, setNewPlaylistName] = useState(''); // Store new playlist name
-
-  useEffect(() => {
-    fetchVideos();
-  }, []);
-
-  const fetchVideos = async () => {
-    try {
-      const response = await fetch('http://localhost:9000/api/videos');
-      if (response.ok) {
-        const data = await response.json();
-        setVideoList(data);
-      } else {
-        alert('Failed to fetch video list');
-      } 
-    } catch (error) {
-      alert('Error fetching videos');
-    }
-  };
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setSelectedFile(file);
-    setVideoPreview(file ? URL.createObjectURL(file) : null);
-  };
-
-  const handleUpload = async () => {
-    if (!selectedFile || !videoTitle) {
-      alert('Please select a file and enter a title.');
-      return;
-    }
-
-    setUploading(true);
-    const formData = new FormData();
-    formData.append('video', selectedFile);
-    formData.append('title', videoTitle);
-
-    try {
-      const response = await fetch('http://localhost:9000/api/upload', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        const uploadedVideo = await response.json();
-        setVideoList((prevVideos) => [...prevVideos, uploadedVideo.video]);
-        alert('Video uploaded successfully');
-      } else {
-        alert('Failed to upload video');
-      }
-    } catch (error) {
-      alert('Error uploading video');
-    } finally {
-      setUploading(false);
-      setSelectedFile(null);
-      setVideoTitle('');
-      setVideoPreview(null);
-    }
-  };
-
-  const togglePlayVideo = (videoId) => {
-    setPlayingVideoId((prevId) => (prevId === videoId ? null : videoId));
-  };
-
-  const handleDelete = async (videoId) => {
-    if (!window.confirm('Are you sure you want to delete this video?')) return;
-
-    try {
-      const response = await fetch(`http://localhost:9000/api/videos/${videoId}`, {
-        method: 'DELETE',
-      });
-
-      if (response.ok) {
-        setVideoList((prevVideos) => prevVideos.filter((video) => video.id !== videoId));
-      } else {
-        alert('Failed to delete video');
-      }
-    } catch (error) {
-      alert('Error deleting video');
-    }
-  };
-
-  // Function to handle video selection for the playlist
-  const toggleVideoSelection = (videoId) => {
-    setSelectedVideos((prevSelected) =>
-      prevSelected.includes(videoId)
-        ? prevSelected.filter((id) => id !== videoId)
-        : [...prevSelected, videoId]
-    );
-  };
-
-  // Create a new playlist
-  const createPlaylist = () => {
-    if (!newPlaylistName || selectedVideos.length === 0) {
-      alert('Enter a playlist name and select at least one video.');
-      return;
-    }
-
-    const newPlaylist = {
-      id: playlists.length + 1,
-      name: newPlaylistName,
-      videos: videoList.filter((video) => selectedVideos.includes(video.id)),
-    };
-
-    setPlaylists((prevPlaylists) => [...prevPlaylists, newPlaylist]);
-    setSelectedVideos([]);  // Reset selected videos
-    setNewPlaylistName('');  // Reset playlist name
-    alert('Playlist created successfully');
-  };
-
+const Instructor_Courses = () => {
   return (
     <div>
    <main>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
   {/* =======================
     Main Banner START */}
   <section className="pt-0">
     {/* Main banner background image */}
     <div className="container-fluid px-0">
-      {/* <div className="bg-blue h-100px h-md-200px rounded-0" style={{background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover'}}>
-      </div> */}
+      <div className="bg-blue h-100px h-md-200px rounded-0" style={{background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover'}}>
+      </div>
     </div>
     <div className="container mt-n4">
       <div className="row">
@@ -147,7 +23,7 @@ const Instructor_Courses = ({ videoPreview: propVideoPreview }) => {
               {/* Avatar */}
               <div className="col-auto mt-4 mt-md-0">
                 <div className="avatar avatar-xxl mt-n3">
-                  <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/01.jpg" alt />
+                  <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/01.jpg" alt="" />
                 </div>
               </div>
               {/* Profile info */}
@@ -172,7 +48,7 @@ const Instructor_Courses = ({ videoPreview: propVideoPreview }) => {
           {/* Divider */}
           <hr className="d-xl-none" />
           <div className="col-12 col-xl-3 d-flex justify-content-between align-items-center">
-            <a className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
+            <Link className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</Link>
             <button className="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
               <i className="fas fa-sliders-h" />
             </button>
@@ -228,7 +104,7 @@ const Instructor_Courses = ({ videoPreview: propVideoPreview }) => {
           <div className="card border bg-transparent rounded-3">
             {/* Card header START */}
             <div className="card-header bg-transparent border-bottom">
-              <h2 className="mb-0">Instructor Courses List</h2>
+              <h3 className="mb-0">My Courses List</h3>
             </div>
             {/* Card header END */}
             {/* Card body START */}
@@ -260,113 +136,296 @@ const Instructor_Courses = ({ videoPreview: propVideoPreview }) => {
               </div>
               {/* Search and select END */}
               {/* Course list table START */}
-              <div>
-      <main>
-        <div className={style.instructorDashboard}>
-
-          {/* Upload Section */}
-          <div className={style.uploadSection}>
-            <h2>Upload Video</h2>
-            <input
-              type="text"
-              placeholder="Video Title"
-              value={videoTitle}
-              onChange={(e) => setVideoTitle(e.target.value)}
-            />
-            <label htmlFor="video-upload" className={style.uploadIcon}>
-              📹 Upload Video
-            </label>
-            <input
-              type="file"
-              id="video-upload"
-              style={{ display: 'none' }}
-              accept="video/*"
-              onChange={handleFileChange}
-            />
-
-            {videoPreview && (
-              <div className={style.previewSection}>
-                <h4>Video Preview:</h4>
-                <video src={videoPreview} controls width="200" />
-                <p>{videoTitle}</p>
+              <div className="table-responsive border-0">
+                <table className="table table-dark-gray align-middle p-4 mb-0 table-hover">
+                  {/* Table head */}
+                  <thead>
+                    <tr>
+                      <th scope="col" className="border-0 rounded-start">Course Title</th>
+                      <th scope="col" className="border-0">Enrolled</th>
+                      <th scope="col" className="border-0">Status</th>
+                      <th scope="col" className="border-0">Price</th>
+                      <th scope="col" className="border-0 rounded-end">Action</th>
+                    </tr>
+                  </thead>
+                  {/* Table body START */}
+                  <tbody>
+                    {/* Table item */}
+                    <tr>
+                      {/* Course item */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-60px">
+                            <img src="assets/images/courses/4by3/08.jpg" className="rounded" alt="" />
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Building Scalable APIs with GraphQL</Link></h6>
+                            {/* Info */}
+                            <div className="d-sm-flex">
+                              <p className="h6 fw-light mb-0 small me-3"><i className="fas fa-table text-orange me-2" />18 lectures</p>
+                              <p className="h6 fw-light mb-0 small"><i className="fas fa-check-circle text-success me-2" />6 Completed</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Enrolled item */}
+                      <td className="text-center text-sm-start">125</td>
+                      {/* Status item */}
+                      <td>
+                        <div className="badge bg-success bg-opacity-10 text-success">Live</div>
+                      </td>
+                      {/* Price item */}
+                      <td>$250</td>
+                      {/* Action item */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                        <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                      </td>
+                    </tr>
+                    {/* Table item */}
+                    <tr>
+                      {/* Course item */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-60px">
+                            <img src="assets/images/courses/4by3/10.jpg" className="rounded" alt="" />
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Bootstrap 5 From Scratch</Link></h6>
+                            {/* Info */}
+                            <div className="d-sm-flex">
+                              <p className="h6 fw-light mb-0 small me-3"><i className="fas fa-table text-orange me-2" />0 lectures</p>
+                              <p className="h6 fw-light mb-0 small"><i className="fas fa-check-circle text-success me-2" />0 Completed</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Enrolled item */}
+                      <td className="text-center text-sm-start">145</td>
+                      {/* Status item */}
+                      <td>
+                        <div className="badge bg-secondary bg-opacity-10 text-secondary">Disable</div>
+                      </td>
+                      {/* Price item */}
+                      <td>$350</td>
+                      {/* Action item */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                        <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                      </td>
+                    </tr>
+                    {/* Table item */}
+                    <tr>
+                      {/* Course item */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-60px">
+                            <img src="assets/images/courses/4by3/06.jpg" className="rounded" alt="" />
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Angular – The Complete Guider</Link></h6>
+                            {/* Info */}
+                            <div className="d-sm-flex">
+                              <p className="h6 fw-light mb-0 small me-3"><i className="fas fa-table text-orange me-2" />37 lectures</p>
+                              <p className="h6 fw-light mb-0 small"><i className="fas fa-check-circle text-success me-2" />20 Completed</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Enrolled item */}
+                      <td className="text-center text-sm-start">145</td>
+                      {/* Status item */}
+                      <td>
+                        <div className="badge bg-success bg-opacity-10 text-success">Live</div>
+                      </td>
+                      {/* Price item */}
+                      <td>$652</td>
+                      {/* Action item */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                        <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                      </td>
+                    </tr>
+                    {/* Table item */}
+                    <tr>
+                      {/* Course item */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-60px">
+                            <img src="assets/images/courses/4by3/02.jpg" className="rounded" alt="" />
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Graphic Design Masterclass</Link></h6>
+                            {/* Info */}
+                            <div className="d-sm-flex">
+                              <p className="h6 fw-light mb-0 small me-3"><i className="fas fa-table text-orange me-2" />58 lectures</p>
+                              <p className="h6 fw-light mb-0 small"><i className="fas fa-check-circle text-success me-2" />0 Completed</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Enrolled item */}
+                      <td className="text-center text-sm-start">0</td>
+                      {/* Status item */}
+                      <td>
+                        <div className="badge bg-info bg-opacity-10 text-info">Applied</div>
+                      </td>
+                      {/* Price item */}
+                      <td>$245</td>
+                      {/* Action item */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                        <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                      </td>
+                    </tr>
+                    {/* Table item */}
+                    <tr>
+                      {/* Course item */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-60px">
+                            <img src="assets/images/courses/4by3/04.jpg" className="rounded" alt="" />
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Learn Invision</Link></h6>
+                            {/* Info */}
+                            <div className="d-sm-flex">
+                              <p className="h6 fw-light mb-0 small me-3"><i className="fas fa-table text-orange me-2" />16 lectures</p>
+                              <p className="h6 fw-light mb-0 small"><i className="fas fa-check-circle text-success me-2" />0 Completed</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Enrolled item */}
+                      <td className="text-center text-sm-start">0</td>
+                      {/* Status item */}
+                      <td>
+                        <div className="badge bg-danger bg-opacity-10 text-danger">Rejected</div>
+                      </td>
+                      {/* Price item */}
+                      <td>$365</td>
+                      {/* Action item */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                        <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                      </td>
+                    </tr>
+                    {/* Table item */}
+                    <tr>
+                      {/* Course item */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-60px">
+                            <img src="assets/images/courses/4by3/03.jpg" className="rounded" alt="" />
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Create a Design System in Figma</Link></h6>
+                            {/* Info */}
+                            <div className="d-sm-flex">
+                              <p className="h6 fw-light mb-0 small me-3"><i className="fas fa-table text-orange me-2" />25 lectures</p>
+                              <p className="h6 fw-light mb-0 small"><i className="fas fa-check-circle text-success me-2" />0 Completed</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Enrolled item */}
+                      <td className="text-center text-sm-start">0</td>
+                      {/* Status item */}
+                      <td>
+                        <div className="badge bg-info bg-opacity-10 text-info">Applied</div>
+                      </td>
+                      {/* Price item */}
+                      <td>$135</td>
+                      {/* Action item */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                        <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                      </td>
+                    </tr>
+                    {/* Table item */}
+                    <tr>
+                      {/* Course item */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-60px">
+                            <img src="assets/images/courses/4by3/07.jpg" className="rounded" alt="" />
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Deep Learning with React-Native</Link></h6>
+                            {/* Info */}
+                            <div className="d-sm-flex">
+                              <p className="h6 fw-light mb-0 small me-3"><i className="fas fa-table text-orange me-2" />18 lectures</p>
+                              <p className="h6 fw-light mb-0 small"><i className="fas fa-check-circle text-success me-2" />10 Completed</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Enrolled item */}
+                      <td className="text-center text-sm-start">186</td>
+                      {/* Status item */}
+                      <td>
+                        <div className="badge bg-success bg-opacity-10 text-success">Live</div>
+                      </td>
+                      {/* Price item */}
+                      <td>$256</td>
+                      {/* Action item */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                        <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                      </td>
+                    </tr>
+                    {/* Table item */}
+                    <tr>
+                      {/* Course item */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-60px">
+                            <img src="assets/images/courses/4by3/11.jpg" className="rounded" alt="" />
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Build Responsive Websites with HTML</Link></h6>
+                            {/* Info */}
+                            <div className="d-sm-flex">
+                              <p className="h6 fw-light mb-0 small me-3"><i className="fas fa-table text-orange me-2" />42 lectures</p>
+                              <p className="h6 fw-light mb-0 small"><i className="fas fa-check-circle text-success me-2" />25 Completed</p>
+                            </div>		
+                          </div>
+                        </div>
+                      </td>
+                      {/* Enrolled item */}
+                      <td className="text-center text-sm-start">345</td>
+                      {/* Status item */}
+                      <td>
+                        <div className="badge bg-success bg-opacity-10 text-success">Live</div>
+                      </td>
+                      {/* Price item */}
+                      <td>$222</td>
+                      {/* Action item */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i className="far fa-fw fa-edit" /></Link>
+                        <button className="btn btn-sm btn-danger-soft btn-round mb-0"><i className="fas fa-fw fa-times" /></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                  {/* Table body END */}
+                </table>
               </div>
-            )}
-
-            <button onClick={handleUpload} disabled={uploading}>
-              {uploading ? 'Uploading...' : 'Upload'}
-            </button>
-          </div>
-
-          {/* Uploaded Videos List */}
-          <div className={style.videoList}>
-            <h2>Uploaded Videos</h2>
-            <ul>
-              {videoList.length > 0 ? (
-                videoList.map((video) => (
-                  <li key={video.id} className={style.videoItem}>
-                    <p onClick={() => togglePlayVideo(video.id)}>{video.title}</p>
-                    {playingVideoId === video.id ? (
-                      <video src={video.videoUrl} controls width="300" autoPlay />
-                    ) : (
-                      <button onClick={() => togglePlayVideo(video.id)}>▶ Play</button>
-                    )}
-                    <button onClick={() => handleDelete(video.id)}>Delete</button>
-                    <button onClick={() => toggleVideoSelection(video.id)}>
-                      {selectedVideos.includes(video.id) ? '✔ Selected' : 'Select'}
-                    </button>
-                  </li>
-                ))
-              ) : (
-                <p>No videos uploaded yet.</p>
-              )}
-            </ul>
-          </div>
-
-          {/* Playlist Creation Section */}
-          <div className={style.playlistSection}>
-            <h2>Create Playlist</h2>
-            <input
-              type="text"
-              placeholder="Playlist Name"
-              value={newPlaylistName}
-              onChange={(e) => setNewPlaylistName(e.target.value)}
-            />
-            <button onClick={createPlaylist}>Create Playlist</button>
-          </div>
-
-          {/* Display Playlists */}
-          <div className={style.playlistDisplay}>
-            <h2>Playlists</h2>
-            {playlists.map((playlist) => (
-              <div key={playlist.id} className={style.playlistItem}>
-                <h3>{playlist.name}</h3>
-                <ul>
-                  {playlist.videos.map((video) => (
-                    <li key={video.id}>
-                      <span>{video.title}</span>
-                      <button onClick={() => togglePlayVideo(video.id)}>
-                        {playingVideoId === video.id ? '⏹ Stop' : '▶ Play'}
-                      </button>
-                      {/* Display video player only when the video is playing */}
-                      {playingVideoId === video.id && (
-                        <video
-                          src={video.videoUrl}
-                          controls
-                          width="400"
-                          autoPlay
-                          className={style.playlistVideo}
-                        />
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </main>
-     
-    </div>
               {/* Course list table END */}
               {/* Pagination START */}
               <div className="d-sm-flex justify-content-sm-between align-items-sm-center mt-4 mt-sm-3">
@@ -375,11 +434,11 @@ const Instructor_Courses = ({ videoPreview: propVideoPreview }) => {
                 {/* Pagination */}
                 <nav className="d-flex justify-content-center mb-0" aria-label="navigation">
                   <ul className="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                    <li className="page-item mb-0"><a className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-left" /></a></li>
-                    <li className="page-item mb-0"><a className="page-link" href="#">1</a></li>
-                    <li className="page-item mb-0 active"><a className="page-link" href="#">2</a></li>
-                    <li className="page-item mb-0"><a className="page-link" href="#">3</a></li>
-                    <li className="page-item mb-0"><a className="page-link" href="#"><i className="fas fa-angle-right" /></a></li>
+                    <li className="page-item mb-0"><Link className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-left" /></Link></li>
+                    <li className="page-item mb-0"><Link className="page-link" href="#">1</Link></li>
+                    <li className="page-item mb-0 active"><Link className="page-link" href="#">2</Link></li>
+                    <li className="page-item mb-0"><Link className="page-link" href="#">3</Link></li>
+                    <li className="page-item mb-0"><Link className="page-link" href="#"><i className="fas fa-angle-right" /></Link></li>
                   </ul>
                 </nav>
               </div>
@@ -397,9 +456,9 @@ const Instructor_Courses = ({ videoPreview: propVideoPreview }) => {
     Inner part END */}
 </main>
 
-<Footer />
+<Internal_Footer/>
     </div>
-  );
-};
+  )
+}
 
-export default Instructor_Courses;
+export default Instructor_Courses

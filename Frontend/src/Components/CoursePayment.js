@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-const CoursePayment = () => {
+import Nav  from './Nav'
+import Footer from './Footer';
+const CoursePayment = ({cartCount,handleLogout}) => {
   // State to manage card form inputs
   const [cardDetails, setCardDetails] = useState({
     cardNumber: '',
@@ -53,8 +55,8 @@ const CoursePayment = () => {
 
   return (
     <>
-   
-    <section className="pt-0">
+   <Nav cartCount={cartCount} handleLogout={handleLogout} />
+    <section className="pt-0 mt-5">
       <div className="container">
         <div className="row">
           <div className="col-xl-9">
@@ -241,6 +243,7 @@ const CoursePayment = () => {
         </div>
       </div>
     </section>
+    <Footer/>
     </>
   )
 }

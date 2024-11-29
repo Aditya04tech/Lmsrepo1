@@ -52,7 +52,7 @@ const Sign_UP = () => {
                   <img
                     src="assets/images/element/02.svg"
                     className="mt-5"
-                    alt
+                    alt=""
                   />
                   <div className="d-sm-flex mt-5 align-items-center justify-content-center">
                     <ul className="avatar-group mb-2 mb-sm-0">
@@ -84,7 +84,7 @@ const Sign_UP = () => {
                     <img
                       src="assets/images/element/03.svg"
                       className="h-40px mb-2"
-                      alt
+                      alt=""
                     />
                     <h2>Sign up for your account!</h2>
                     <p className="lead mb-4">
@@ -179,7 +179,7 @@ const Sign_UP = () => {
                         <div className="form-check">
                           <input type="checkbox" className="form-check-input" id="checkbox-1" />
                           <label className="form-check-label" htmlFor="checkbox-1">
-                            By signing up, you agree to the<a href="#"> terms of service</a>
+                            By signing up, you agree to the<Link href="#"> terms of service</Link>
                           </label>
                         </div>
                       </div> */}
@@ -209,16 +209,16 @@ const Sign_UP = () => {
                         </p>
                       </div>
                       <div className="col-xxl-6 d-grid">
-                        <a href="#" className="btn bg-google mb-2 mb-xxl-0">
+                        <Link href="#" className="btn bg-google mb-2 mb-xxl-0">
                           <i className="fab fa-fw fa-google text-white me-2" />
                           Signup with Google
-                        </a>
+                        </Link>
                       </div>
                       <div className="col-xxl-6 d-grid">
-                        <a href="#" className="btn bg-facebook mb-0">
+                        <Link href="#" className="btn bg-facebook mb-0">
                           <i className="fab fa-fw fa-facebook-f me-2" />
                           Signup with Facebook
-                        </a>
+                        </Link>
                       </div>
                     </div>
 

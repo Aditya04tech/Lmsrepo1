@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Internal_Footer = () => {
   return (
-    <div>
+   
       <div>
   
   <footer className="bg-dark p-3">
@@ -17,17 +17,17 @@ const Internal_Footer = () => {
         {/* Widget */}
         <div className="col-md-4 mb-3 mb-md-0">
           <div className="text-center text-white text-primary-hover">
-            Copyrights ©2024 Eduport. Build by <a href="https://www.webestica.com/" target="_blank" className="text-white">Webestica</a>.
+            Copyrights ©2024 Eduport. Build by <Link href="#" target="_blank" className="text-white">Webestica</Link>.
           </div>
         </div>
         {/* Widget */}
         <div className="col-md-4">
           {/* Rating */}
           <ul className="list-inline mb-0 text-center text-md-end">
-            <li className="list-inline-item ms-2"><a href="#"><i className="text-white fab fa-facebook" /></a></li>
-            <li className="list-inline-item ms-2"><a href="#"><i className="text-white fab fa-instagram" /></a></li>
-            <li className="list-inline-item ms-2"><a href="#"><i className="text-white fab fa-linkedin-in" /></a></li>
-            <li className="list-inline-item ms-2"><a href="#"><i className="text-white fab fa-twitter" /></a></li>
+            <li className="list-inline-item ms-2"><Link href="#"><i className="text-white fab fa-facebook" /></Link></li>
+            <li className="list-inline-item ms-2"><Link href="#"><i className="text-white fab fa-instagram" /></Link></li>
+            <li className="list-inline-item ms-2"><Link href="#"><i className="text-white fab fa-linkedin-in" /></Link></li>
+            <li className="list-inline-item ms-2"><Link href="#"><i className="text-white fab fa-twitter" /></Link></li>
           </ul>
         </div>
       </div>
@@ -36,7 +36,7 @@ const Internal_Footer = () => {
   {/* =======================
 Footer END */}
 </div>
-    </div>
+
   )
 }
 

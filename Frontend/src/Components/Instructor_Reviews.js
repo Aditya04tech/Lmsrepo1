@@ -48,7 +48,7 @@ const Instructor_Reviews = () => {
           {/* Divider */}
           <hr className="d-xl-none" />
           <div className="col-12 col-xl-3 d-flex justify-content-between align-items-center">
-            <a className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
+            <Link className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</Link>
             <button className="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
               <i className="fas fa-sliders-h" />
             </button>
@@ -130,7 +130,7 @@ const Instructor_Reviews = () => {
               {/* Review item START */}
               <div className="d-sm-flex">
                 {/* Avatar image */}
-                <img className="avatar avatar-lg rounded-circle float-start me-3" src="assets/images/avatar/01.jpg" alt="avatar" />
+                <img className="avatar avatar-lg rounded-circle float-start me-3" src="assets/images/avatar/01.jpg"alt="" />
                 <div>
                   <div className="mb-3 d-sm-flex justify-content-sm-between align-items-center">
                     {/* Title */}
@@ -152,14 +152,14 @@ const Instructor_Reviews = () => {
                   <p>Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. </p>
                   {/* Button */}
                   <div className="text-end">
-                    <a href="#" className="btn btn-sm btn-primary-soft mb-1 mb-sm-0">Direct message</a>
-                    <a className="btn btn-sm btn-light mb-0" data-bs-toggle="collapse" href="#collapseComment" role="button" aria-expanded="false" aria-controls="collapseComment">
+                    <Link href="#" className="btn btn-sm btn-primary-soft mb-1 mb-sm-0">Direct message</Link>
+                    <Link className="btn btn-sm btn-light mb-0" data-bs-toggle="collapse" href="#collapseComment" role="button" aria-expanded="false" aria-controls="collapseComment">
                       Reply
-                    </a>
+                    </Link>
                     {/* collapse textarea */}
                     <div className="collapse show" id="collapseComment">
                       <div className="d-flex mt-3">
-                        <textarea className="form-control mb-0" placeholder="Add a comment..." rows={2} spellCheck="false" defaultValue={""} />
+                        <textareLink className="form-control mb-0" placeholder="Add a comment..." rows={2} spellCheck="false" defaultValue={""} />
                         <button className="btn btn-sm btn-primary-soft ms-2 px-4 mb-0 flex-shrink-0"><i className="fas fa-paper-plane fs-5" /></button>
                       </div>
                     </div>
@@ -172,7 +172,7 @@ const Instructor_Reviews = () => {
               {/* Review item START */}
               <div className="d-sm-flex">
                 {/* Avatar image */}
-                <img className="avatar avatar-lg rounded-circle float-start me-3" src="assets/images/avatar/03.jpg" alt="avatar" />
+                <img className="avatar avatar-lg rounded-circle float-start me-3" src="assets/images/avatar/03.jpg"alt="" />
                 <div>
                   <div className="mb-3 d-sm-flex justify-content-sm-between align-items-center">
                     {/* Title */}
@@ -194,8 +194,8 @@ const Instructor_Reviews = () => {
                   <p>Far advanced settling say finished raillery. Offered chiefly farther Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. </p>
                   {/* Button */}
                   <div className="text-end">
-                    <a href="#" className="btn btn-sm btn-primary-soft mb-0">Direct message</a>
-                    <a href="#" className="btn btn-sm btn-light mb-0">Reply</a>
+                    <Link href="#" className="btn btn-sm btn-primary-soft mb-0">Direct message</Link>
+                    <Link href="#" className="btn btn-sm btn-light mb-0">Reply</Link>
                   </div>
                 </div>
               </div>
@@ -205,7 +205,7 @@ const Instructor_Reviews = () => {
               {/* Review item START */}
               <div className="d-sm-flex">
                 {/* Avatar image */}
-                <img className="avatar avatar-lg rounded-circle float-start me-3" src="assets/images/avatar/05.jpg" alt="avatar" />
+                <img className="avatar avatar-lg rounded-circle float-start me-3" src="assets/images/avatar/05.jpg"alt="" />
                 <div>
                   <div className="mb-3 d-sm-flex justify-content-sm-between align-items-center">
                     {/* Title */}
@@ -227,8 +227,8 @@ const Instructor_Reviews = () => {
                   <p>Offered chiefly farther Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. </p>
                   {/* Button */}
                   <div className="text-end">
-                    <a href="#" className="btn btn-sm btn-primary-soft mb-0">Direct message</a>
-                    <a href="#" className="btn btn-sm btn-light mb-0">Reply</a>
+                    <Link href="#" className="btn btn-sm btn-primary-soft mb-0">Direct message</Link>
+                    <Link href="#" className="btn btn-sm btn-light mb-0">Reply</Link>
                   </div>
                 </div>
               </div>
@@ -238,7 +238,7 @@ const Instructor_Reviews = () => {
               {/* Review item START */}
               <div className="d-sm-flex">
                 {/* Avatar image */}
-                <img className="avatar avatar-lg rounded-circle float-start me-3" src="assets/images/avatar/08.jpg" alt="avatar" />
+                <img className="avatar avatar-lg rounded-circle float-start me-3" src="assets/images/avatar/08.jpg"alt="" />
                 <div>
                   <div className="mb-3 d-sm-flex justify-content-sm-between align-items-center">
                     {/* Title */}
@@ -260,8 +260,8 @@ const Instructor_Reviews = () => {
                   <p>Chiefly farther Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. </p>
                   {/* Button */}
                   <div className="text-end">
-                    <a href="#" className="btn btn-sm btn-primary-soft mb-0">Direct message</a>
-                    <a href="#" className="btn btn-sm btn-light mb-0">Reply</a>
+                    <Link href="#" className="btn btn-sm btn-primary-soft mb-0">Direct message</Link>
+                    <Link href="#" className="btn btn-sm btn-light mb-0">Reply</Link>
                   </div>
                 </div>
               </div>
@@ -271,7 +271,7 @@ const Instructor_Reviews = () => {
               {/* Review item START */}
               <div className="d-sm-flex">
                 {/* Avatar image */}
-                <img className="avatar avatar-lg rounded-circle float-start me-3" src="assets/images/avatar/09.jpg" alt="avatar" />
+                <img className="avatar avatar-lg rounded-circle float-start me-3" src="assets/images/avatar/09.jpg"alt="" />
                 <div>
                   <div className="mb-3 d-sm-flex justify-content-sm-between align-items-center">
                     {/* Title */}
@@ -293,8 +293,8 @@ const Instructor_Reviews = () => {
                   <p>Chiefly farther Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. </p>
                   {/* Button */}
                   <div className="text-end">
-                    <a href="#" className="btn btn-sm btn-primary-soft mb-0">Direct message</a>
-                    <a href="#" className="btn btn-sm btn-light mb-0">Reply</a>
+                    <Link href="#" className="btn btn-sm btn-primary-soft mb-0">Direct message</Link>
+                    <Link href="#" className="btn btn-sm btn-light mb-0">Reply</Link>
                   </div>
                 </div>
               </div>
@@ -309,11 +309,11 @@ const Instructor_Reviews = () => {
                 {/* Pagination */}
                 <nav className="d-flex justify-content-center mb-0" aria-label="navigation">
                   <ul className="pagination pagination-sm pagination-primary-soft my-0 py-0">
-                    <li className="page-item my-0"><a className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-left" /></a></li>
-                    <li className="page-item my-0"><a className="page-link" href="#">1</a></li>
-                    <li className="page-item my-0 active"><a className="page-link" href="#">2</a></li>
-                    <li className="page-item my-0"><a className="page-link" href="#">3</a></li>
-                    <li className="page-item my-0"><a className="page-link" href="#"><i className="fas fa-angle-right" /></a></li>
+                    <li className="page-item my-0"><Link className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-left" /></Link></li>
+                    <li className="page-item my-0"><Link className="page-link" href="#">1</Link></li>
+                    <li className="page-item my-0 active"><Link className="page-link" href="#">2</Link></li>
+                    <li className="page-item my-0"><Link className="page-link" href="#">3</Link></li>
+                    <li className="page-item my-0"><Link className="page-link" href="#"><i className="fas fa-angle-right" /></Link></li>
                   </ul>
                 </nav>
               </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-
+import { Link } from 'react-router-dom';
 // Custom arrow component for left (previous) arrow
 const PrevArrow = (props) => {
     const { className, onClick } = props;
@@ -53,17 +53,21 @@ const arrowStyle = {
 const CourseCard = ({ course }) => {
     return (
         <div className="card action-trigger-hover border bg-transparent">
-            <img src={course.image} className="card-img-top" alt="course image" />
+            <img 
+  src={course.image} 
+  className="card-img-top" 
+  alt={course.title || "Course image"} 
+/>
             {course.isFree && <div className="ribbon mt-3"><span>Free</span></div>}
             <div className="card-body pb-0">
                 <div className="d-flex justify-content-between mb-3">
                     <span className="hstack gap-2">
-                        <a href="#" className="badge bg-primary bg-opacity-10 text-primary">{course.category}</a>
-                        <a href="#" className="badge text-bg-dark">{course.level}</a>
+                        <Link href="#" className="badge bg-primary bg-opacity-10 text-primary">{course.category}</Link>
+                        <Link href="#" className="badge text-bg-dark">{course.level}</Link>
                     </span>
-                    <a href="#" className="h6 fw-light mb-0"><i className="far fa-bookmark"></i></a>
+                    <Link href="#" className="h6 fw-light mb-0"><i className="far fa-bookmark"></i></Link>
                 </div>
-                <h5 className="card-title"><a href="#">{course.title}</a></h5>
+                <h5 className="card-title"><Link href="#">{course.title}</Link></h5>
                 <div className="d-flex justify-content-between mb-2">
                     <div className="hstack gap-2">
                         <p className="text-warning m-0">{course.rating}<i className="fas fa-star text-warning ms-1"></i></p>
@@ -86,11 +90,11 @@ const CourseCard = ({ course }) => {
                         <div className="avatar avatar-sm">
                             <img className="avatar-img rounded-1" src={course.instructor.image} alt="avatar" />
                         </div>
-                        <p className="mb-0 ms-2"><a href="#" className="h6 fw-light mb-0">{course.instructor.name}</a></p>
+                        <p className="mb-0 ms-2"><Link href="#" className="h6 fw-light mb-0">{course.instructor.name}</Link></p>
                     </div>
                     <div>
                         <h4 className="text-success mb-0 item-show">{course.isFree ? "Free" : `$${course.price}`}</h4>
-                        <a href="#" className="btn btn-sm btn-success-soft item-show-hover"><i className="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                        <Link href="#" className="btn btn-sm btn-success-soft item-show-hover"><i className="fas fa-shopping-cart me-2"></i>Add to cart</Link>
                     </div>
                 </div>
             </div>

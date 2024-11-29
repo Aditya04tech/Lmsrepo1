@@ -1,22 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from 'react'
 import { Link } from 'react-router-dom'
-import usertxt from "../Components/Css/usertxt.css"; // Import CSS without assigning it to a variable
 
 const StudentDashboard = () => {
-  const [purchasedVideos, setPurchasedVideos] = useState([]);
-
-  // Fetch purchased videos from localStorage on mount
-  useEffect(() => {
-    const videos = JSON.parse(localStorage.getItem('purchasedVideos')) || [];
-    setPurchasedVideos(videos);
-  }, []);
-
-  // Handle video deletion
-  const handleDelete = (videoId) => { 
-    const updatedVideos = purchasedVideos.filter((video) => video.id !== videoId);
-    localStorage.setItem('purchasedVideos', JSON.stringify(updatedVideos));
-    setPurchasedVideos(updatedVideos);
-  };
   return (
     <div>
     {/* Page Banner START */}
@@ -33,7 +18,7 @@ const StudentDashboard = () => {
               {/* Avatar */}
               <div className="col-auto">
                 <div className="avatar avatar-xxl position-relative mt-n3">
-                  <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/09.jpg" alt />
+                  <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/09.jpg" alt="studentDashboardimg" />
                   <span className="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
                 </div>
               </div>
@@ -67,7 +52,7 @@ const StudentDashboard = () => {
           {/* Divider */}
           <hr className="d-xl-none" />
           <div className="col-12 col-xl-3 d-flex justify-content-between align-items-center">
-            <a className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
+            <Link className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</Link>
             <button className="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
               <i className="fas fa-sliders-h" />
             </button>
@@ -117,8 +102,8 @@ const StudentDashboard = () => {
                   </Link>
                   {/* Submenu */}
                   <ul className="nav collapse flex-column" id="collapseauthentication" data-bs-parent="#navbar-sidebar">
-                    <li className="nav-item"> <a className="nav-link" href="#">Dropdown item</a></li>
-                    <li className="nav-item"> <a className="nav-link" href="#">Dropdown item</a></li>
+                    <li className="nav-item"> <Link className="nav-link" href="#">Dropdown item</Link></li>
+                    <li className="nav-item"> <Link className="nav-link" href="#">Dropdown item</Link></li>
                   </ul>
                 </div>
               </div>
@@ -204,27 +189,207 @@ const StudentDashboard = () => {
               </div>
               {/* Search and select END */}
               {/* Course list table START */}
-              <div className={usertxt.container}>
-      <h2>Your Purchased Videos</h2>
-      {purchasedVideos.length > 0 ? (
-        <div className={usertxt.videoGrid}>
-          {purchasedVideos.map((video) => (
-            <div key={video.id} className={usertxt.videoCard}>
-              <h3>{video.title}</h3> {/* Ensure this matches the video object */}
-              <video controls src={video.videoUrl} className={usertxt.video} /> {/* Corrected property */}
-              <button
-                onClick={() => handleDelete(video.id)}
-                className={usertxt.deleteButton}
-              >
-                Delete
-              </button>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p>No purchased videos yet. Go add some!</p>
-      )}
-    </div>
+              <div className="table-responsive border-0">
+                <table className="table table-dark-gray align-middle p-4 mb-0 table-hover">
+                  {/* Table head */}
+                  <thead>
+                    <tr>
+                      <th scope="col" className="border-0 rounded-start">Course Title</th>
+                      <th scope="col" className="border-0">Total Lectures</th>
+                      <th scope="col" className="border-0">Completed Lecture</th>
+                      <th scope="col" className="border-0 rounded-end">Action</th>
+                    </tr>
+                  </thead>
+                  {/* Table body START */}
+                  <tbody>
+                    {/* Table item */}
+                    <tr>
+                      {/* Table data */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-100px">
+                          <img 
+  src="assets/images/courses/4by3/02.jpg" 
+  className="rounded" 
+  alt="Student Dashboard" 
+/>                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Building Scalable APIs with GraphQL</Link></h6>
+                            {/* Info */}
+                            <div className="overflow-hidden">
+                              <h6 className="mb-0 text-end">85%</h6>
+                              <div className="progress progress-sm bg-primary bg-opacity-10">
+                                <div className="progress-bar bg-primary aos" role="progressbar" data-aos="slide-right" data-aos-delay={200} data-aos-duration={1000} data-aos-easing="ease-in-out" style={{width: '85%'}} aria-valuenow={85} aria-valuemin={0} aria-valuemax={100}>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Table data */}
+                      <td>56</td>
+                      {/* Table data */}
+                      <td>40</td>
+                      {/* Table data */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i className="bi bi-play-circle me-1" />Continue</Link>
+                      </td>
+                    </tr>
+                    {/* Table item */}
+                    <tr>
+                      {/* Table data */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-100px">
+                          <img 
+  src="assets/images/courses/4by3/03.jpg" 
+  className="rounded" 
+  alt="Course Details" 
+/>
+
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Create a Design System in Figma</Link></h6>
+                            {/* Info */}
+                            <div className="overflow-hidden">
+                              <h6 className="mb-0 text-end">100%</h6>
+                              <div className="progress progress-sm bg-primary bg-opacity-10">
+                                <div className="progress-bar bg-primary aos" role="progressbar" data-aos="slide-right" data-aos-delay={200} data-aos-duration={1000} data-aos-easing="ease-in-out" style={{width: '100%'}} aria-valuenow={100} aria-valuemin={0} aria-valuemax={100}>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Table data */}
+                      <td>42</td>
+                      {/* Table data */}
+                      <td>42</td>
+                      {/* Table data */}
+                      <td>
+                        <button className="btn btn-sm btn-success me-1 mb-1 mb-x;-0 disabled"><i className="bi bi-check me-1" />Complete</button>
+                        <Link href="#" className="btn btn-sm btn-light me-1"><i className="bi bi-arrow-repeat me-1" />Restart</Link>
+                      </td>
+                    </tr>
+                    {/* Table item */}
+                    <tr>
+                      {/* Table data */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-100px">
+                          <img 
+  src="assets/images/courses/4by3/04.jpg" 
+  className="rounded" 
+  alt="Student Progress" 
+/>
+
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">The Complete Web Development in python</Link></h6>
+                            {/* Info */}
+                            <div className="overflow-hidden">
+                              <h6 className="mb-0 text-end">60%</h6>
+                              <div className="progress progress-sm bg-primary bg-opacity-10">
+                                <div className="progress-bar bg-primary aos" role="progressbar" data-aos="slide-right" data-aos-delay={200} data-aos-duration={1000} data-aos-easing="ease-in-out" style={{width: '60%'}} aria-valuenow={60} aria-valuemin={0} aria-valuemax={100}>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Table data */}
+                      <td>28</td>
+                      {/* Table data */}
+                      <td>12</td>
+                      {/* Table data */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i className="bi bi-play-circle me-1" />Continue</Link>
+                      </td>
+                    </tr>
+                    {/* Table item */}
+                    <tr>
+                      {/* Table data */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-100px">
+                          <img 
+  src="assets/images/courses/4by3/05.jpg" 
+  className="rounded" 
+  alt="Completed Courses" 
+/>
+
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Digital Marketing Masterclass</Link></h6>
+                            {/* Info */}
+                            <div className="overflow-hidden">
+                              <h6 className="mb-0 text-end">40%</h6>
+                              <div className="progress progress-sm bg-primary bg-opacity-10">
+                                <div className="progress-bar bg-primary aos" role="progressbar" data-aos="slide-right" data-aos-delay={200} data-aos-duration={1000} data-aos-easing="ease-in-out" style={{width: '40%'}} aria-valuenow={40} aria-valuemin={0} aria-valuemax={100}>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Table data */}
+                      <td>32</td>
+                      {/* Table data */}
+                      <td>18</td>
+                      {/* Table data */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i className="bi bi-play-circle me-1" />Continue</Link>
+                      </td>
+                    </tr>
+                    {/* Table item */}
+                    <tr>
+                      {/* Table data */}
+                      <td>
+                        <div className="d-flex align-items-center">
+                          {/* Image */}
+                          <div className="w-100px">
+                          <img 
+  src="assets/images/courses/4by3/06.jpg" 
+  className="rounded" 
+  alt="Upcoming Events" 
+/>
+
+                          </div>
+                          <div className="mb-0 ms-2">
+                            {/* Title */}
+                            <h6><Link href="#">Graphic Design Masterclass</Link></h6>
+                            {/* Info */}
+                            <div className="overflow-hidden">
+                              <h6 className="mb-0 text-end">90%</h6>
+                              <div className="progress progress-sm bg-primary bg-opacity-10">
+                                <div className="progress-bar bg-primary aos" role="progressbar" data-aos="slide-right" data-aos-delay={200} data-aos-duration={1000} data-aos-easing="ease-in-out" style={{width: '90%'}} aria-valuenow={90} aria-valuemin={0} aria-valuemax={100}>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      {/* Table data */}
+                      <td>16</td>
+                      {/* Table data */}
+                      <td>14</td>
+                      {/* Table data */}
+                      <td>
+                        <Link href="#" className="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i className="bi bi-play-circle me-1" />Continue</Link>
+                      </td>
+                    </tr>
+                  </tbody>
+                  {/* Table body END */}
+                </table>
+              </div>
               {/* Course list table END */}
               {/* Pagination START */}
               <div className="d-sm-flex justify-content-sm-between align-items-sm-center mt-4 mt-sm-3">
@@ -233,11 +398,11 @@ const StudentDashboard = () => {
                 {/* Pagination */}
                 <nav className="d-flex justify-content-center mb-0" aria-label="navigation">
                   <ul className="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                    <li className="page-item mb-0"><a className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-left" /></a></li>
-                    <li className="page-item mb-0"><a className="page-link" href="#">1</a></li>
-                    <li className="page-item mb-0 active"><a className="page-link" href="#">2</a></li>
-                    <li className="page-item mb-0"><a className="page-link" href="#">3</a></li>
-                    <li className="page-item mb-0"><a className="page-link" href="#"><i className="fas fa-angle-right" /></a></li>
+                    <li className="page-item mb-0"><Link className="page-link" href="#" tabIndex={-1}><i className="fas fa-angle-left" /></Link></li>
+                    <li className="page-item mb-0"><Link className="page-link" href="#">1</Link></li>
+                    <li className="page-item mb-0 active"><Link className="page-link" href="#">2</Link></li>
+                    <li className="page-item mb-0"><Link className="page-link" href="#">3</Link></li>
+                    <li className="page-item mb-0"><Link className="page-link" href="#"><i className="fas fa-angle-right" /></Link></li>
                   </ul>
                 </nav>
               </div>

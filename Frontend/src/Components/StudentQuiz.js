@@ -40,7 +40,7 @@ Page Banner START */}
               {/* Avatar */}
               <div className="col-auto">
                 <div className="avatar avatar-xxl position-relative mt-n3">
-                  <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/09.jpg" alt />
+                  <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/09.jpg" alt="Quiz image" aria-hidden="true" />
                   <span className="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
                 </div>
               </div>
@@ -74,7 +74,7 @@ Page Banner START */}
           {/* Divider */}
           <hr className="d-xl-none" />
           <div className="col-12 col-xl-3 d-flex justify-content-between align-items-center">
-            <a className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
+            <Link className="h6 mb-0 fw-bold d-xl-none" href="#">Menu</Link>
             <button className="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
               <i className="fas fa-sliders-h" />
             </button>
@@ -123,8 +123,8 @@ Page content START */}
                   </a>
                   {/* Submenu */}
                   <ul className="nav collapse flex-column" id="collapseauthentication" data-bs-parent="#navbar-sidebar">
-                    <li className="nav-item"> <a className="nav-link" href="#">Dropdown item</a></li>
-                    <li className="nav-item"> <a className="nav-link" href="#">Dropdown item</a></li>
+                    <li className="nav-item"> <Link className="nav-link" href="#">Dropdown item</Link></li>
+                    <li className="nav-item"> <Link className="nav-link" href="#">Dropdown item</Link></li>
                   </ul>
                 </div>
               </div>
@@ -143,12 +143,12 @@ Page content START */}
               <div className="card">
                 <div className="row g-0">
                   <div className="col-md-2">
-                    <img src="assets/images/courses/4by3/01.jpg" className="rounded-2" alt="Card image" />
+                    <img src="assets/images/courses/4by3/01.jpg" className="rounded-2" alt="Card image" aria-hidden="true" />
                   </div>
                   <div className="col-md-10">
                     <div className="card-body">
                       <h3 className="card-title">
-                        <a href="#">The Complete Digital Marketing Course - 12 Courses in 1</a>
+                        <Link href ="#">The Complete Digital Marketing Course - 12 Courses in 1</Link>
                       </h3>
                     </div>
                   </div>

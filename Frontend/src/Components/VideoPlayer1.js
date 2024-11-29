@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 const VideoPlayer1 = () => {
   return ( 
     <section className="py-0 bg-dark position-relative">
@@ -37,7 +37,7 @@ const VideoPlayer1 = () => {
               {/* Title */}
               <div className="card-header bg-light rounded-0">
                 <h1 className="mt-2 fs-5">The Complete Digital Marketing Course - 12 Courses in 1</h1>
-                <h6 className="mb-0 fw-normal"><a href="#">By Jacqueline Miller</a></h6>
+                <h6 className="mb-0 fw-normal"><Link href="#">By Jacqueline Miller</Link></h6>
               </div>
               {/* Course content START */}
               <div className="card-body">
@@ -68,8 +68,8 @@ const VideoPlayer1 = () => {
                               <div>
                                 <div className="d-flex justify-content-between align-items-center mb-2">
                                   <div className="position-relative d-flex align-items-center">
-                                    <a href="#" className="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
-                                    </a></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></section>
+                                    <Link href="#" className="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                    </Link></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></section>
   
   )
 }

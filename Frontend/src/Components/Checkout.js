@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 
-const Checkout = () => {
+import Nav  from './Nav'
+import Footer from './Footer';
+const Checkout = ({cartCount,handleLogout}) => {
     // State to manage card form inputs
   const [cardDetails, setCardDetails] = useState({
     cardNumber: '',
@@ -51,12 +53,14 @@ const Checkout = () => {
     }
 }
   return (
+   <>
+   <Nav cartCount={cartCount} handleLogout={handleLogout} />
     <div>
          <br /><br /><br /><br /><br /><br />
 <main>
   {/* =======================
 Page Banner START */}
-  <section className="py-0">
+  <section className="py-0 mt-5">
     <div className="container">
       <div className="row">
         <div className="col-12">
@@ -490,6 +494,8 @@ Page content END */}
 </main>
 
     </div>
+    <Footer/>
+   </>
   )
 }
 

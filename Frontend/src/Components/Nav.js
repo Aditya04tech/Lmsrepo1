@@ -4,7 +4,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoMdCart } from "react-icons/io";
 import { useUser } from '../context/UserContext'; // Importing UserContext
 
-const Nav = ({ cartCount }) => {
+const Nav = ({ cartCount, }) => {
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -118,8 +118,8 @@ const Nav = ({ cartCount }) => {
                   Dashboard
                 </Link>
                 <ul className="dropdown-menu" aria-labelledby="dashboardDropdown">
-                  <li><Link className="dropdown-item" to="/admin-dashboard">Admin</Link></li>
-                  <li><Link className="dropdown-item" to="/instructordashboard">Instructor</Link></li>
+                  <li><Link className="dropdown-item" to="/adminlogin">Admin</Link></li>
+                  <li><Link className="dropdown-item" to="/instructorlogin">Instructor</Link></li>
                   <li><Link className="dropdown-item" to="/studentdashboard">Student</Link></li>
                 </ul>
               </li>
@@ -131,7 +131,7 @@ const Nav = ({ cartCount }) => {
                   <IoMdCart size={28} />
                   <span> ({cartCount})</span>
                 </Link>
-              </div>  
+              </div>
 
               {user ? ( 
                 <div className="dropdown ms-3" ref={dropdownRef}>

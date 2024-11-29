@@ -1,80 +1,18 @@
-import React,{useState,useEffect} from 'react'
-import { useNavigate } from "react-router-dom";
+import React from 'react'
+
 import Counter from './Counter'
 import PopularCourses from './PopularCourses'
 import Review from './Review'
 import TrendingCourses from './TrendingCourses '
 import Nav from './Nav'
-import Cart from './Cart'
-import AdminLogin from './AdminLogin'
-import Footer from './Footer';
- 
+import Footer from './Footer'
+import { Link } from 'react-router-dom';
 
-const Home = () => {
-  const [cart, setCart] = useState([]);
-  const [cartCount, setCartCount] = useState(0);
-  const navigate = useNavigate();
-  useEffect(() => {
-    const savedCart = localStorage.getItem("cart");
-    if (savedCart) {
-      setCart(JSON.parse(savedCart));
-      localStorage.removeItem("cart");
-    }
-  }, []);
-
-  useEffect(() => {
-    // Update cart count whenever the cart state changes
-    setCartCount(cart.reduce((count, item) => count + item.quantity, 0));
-  }, [cart]);
-
-  const handleAddToCart = (product) => {
-    const existsInCart = cart.find((item) => item.id === product.id);
-    if (existsInCart) {
-      setCart(
-        cart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
-    }
-  };
-
-  const handleAdd = (product) => {
-    setCart(
-      cart.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
-  };
-
-  const handleRemove = (product, isDelete = false) => {
-    if (isDelete) {
-      setCart(cart.filter((item) => item.id !== product.id));
-    } else {
-      const updatedCart = cart.map((item) =>
-        item.id === product.id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      );
-      setCart(updatedCart);
-    }
-  };
-
-  const handleClearCart = () => {
-    setCart([]);
-  };
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setCart([]);
-    window.location.reload();
-    navigate("/");
-  };
+const Home = ({cartCount,handleLogout}) => {
  return ( 
 
 <>
+
 <Nav cartCount={cartCount} handleLogout={handleLogout} />
 {/* **************** MAIN CONTENT START **************** */}
 <main>
@@ -248,7 +186,7 @@ Main Banner START */}
            </div>
           <div className="d-sm-flex align-items-center justify-content-center justify-content-lg-start">
             {/* Button */}
-            <a href="#" className="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Get Started</a>
+            <Link href="#" className="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Get Started</Link>
             {/* Video button */}
             <div className="d-flex align-items-center justify-content-center py-2 ms-0 ms-sm-4">
               <a data-glightbox data-gallery="office-tour" href="https://www.youtube.com/embed/tXHviS-4ygo" className="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7"> 
@@ -341,7 +279,7 @@ Main Banner START */}
           </div>
           {/* Image */}
           <div className="position-relative ms-sm-4">
-            <img src="assets/images/element/07.png" alt />
+            <img src="assets/images/element/07.png" alt="" />
           </div>
         </div>
         {/* Right content END */}
@@ -371,7 +309,7 @@ Main Banner END */}
  <TrendingCourses/>
  <Review/>
 
- <Footer/>
+<Footer/>
 </>
   )
 }
