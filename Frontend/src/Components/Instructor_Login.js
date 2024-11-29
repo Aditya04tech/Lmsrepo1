@@ -13,12 +13,6 @@ const Instructor_Login = () => {
 
   return (
     <>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
     <div className="login-form-container">
       <div className="form-wrapper">
         <div className="logo-container">
@@ -38,7 +32,7 @@ const Instructor_Login = () => {
                 required
               />
             </div>
-            <Link to="/signUp">
+            <Link to="/instructordashboard">
               <button type="submit" className="submit-button">
                   Continue
               </button>
@@ -54,7 +48,7 @@ const Instructor_Login = () => {
         <div className="divider">
           <span className="divider-text">New to LMS?</span>
         </div>
-        <button className="create-account-button" onClick={() => window.location.href = '/signUp'}>
+        <button className="create-account-button" onClick={() => window.location.href = '/instructordashboard'}>
              Create your Instructor account
        </button>
       </div>
